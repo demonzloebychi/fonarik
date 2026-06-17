@@ -1,3 +1,96 @@
 <footer class="footer">
-    
+  <div class="container">
+    <div class="footer__wrapper">
+      <div class="footer__logo">
+        <a href="/">
+          <img src="img/logo.png" alt="logo" />
+        </a>
+      </div>
+
+      <div class="footer__menu">
+        <div class="footer__menu-top">
+          <div class="footer-menu__navigations">
+            <div class="footer-menu__title text-sm font-bold text-black">
+              Навигация
+            </div>
+            <ul class="footer-menu__list">
+              {% for item in commonData.navigation %}
+              <li class="footer-menu__item">
+                {% if item.childrens %}
+                <a
+                  class="footer-menu__link text-xs text-black"
+                  href="javascript:void(0)"
+                >
+                  {{ item.title }}
+                </a>
+                <ul class="footer-submenu__list">
+                  {% for child in item.childrens %}
+                  <li class="footer-submenu__item">
+                    <a
+                      class="footer-submenu__link text-xs text-black"
+                      href="{{ child.url }}"
+                    >
+                      {{ child.title }}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% else %}
+                <a
+                  class="footer-menu__link text-xs text-black"
+                  href="{{ item.url }}"
+                >
+                  {{ item.title }}
+                </a>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <div class="footer-menu__contacts">
+            <div class="footer-menu__title text-sm font-bold text-black">
+              Контакты
+            </div>
+            <ul class="footer-menu__list">
+              {% for item in commonData.contacts %}
+              <li class="footer-menu__item">
+                <a
+                  class="footer-menu__link text-xl text-black"
+                  href="{{ item.url }}"
+                >
+                  {{ item.title }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+
+            <a class="text-sm text-black" href="/policy/">Политика обработки персональных данных</a>
+          </div>
+        </div>
+
+        <div class="footer__menu-bottom">
+          <div class="footer-menu__socials">
+            <div class="footer-menu__title text-sm font-bold">
+              Социальные сети
+            </div>
+            <ul class="footer-menu__list">
+              {% for item in commonData.socials %}
+              <li class="footer-menu__item">
+                <a class="footer-menu__link text-xs" href="{{ item.url }}">
+                  <img src="{{ item.image }}" alt="" />
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <a href="" class="button button-red footer-button">
+            <img src="img/svg/smile.svg" alt="smile">
+            <span>Помочь</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
