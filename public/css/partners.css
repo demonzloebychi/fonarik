@@ -11,12 +11,17 @@
     text-align: center;
     padding-bottom: clamp(20px, 3vw, 40px);
 }
+
 .partners__list {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
 }
+
 .partners__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding-inline: clamp(26px, 3vw, 34px);
     padding-block: clamp(28px, 3.5vw, 43px);
     border-radius: 12px;
