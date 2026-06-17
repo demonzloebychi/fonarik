@@ -1,18 +1,18 @@
 <nav class="mobile-menu__nav">
-  <div class="mobile-menu__navigations">
-    <div class="mobile-menu__title text-sm font-bold text-black">Навигация</div>
-    <ul class="mobile-menu__list">
+  <div class="mobile-menu__navigations nav-menu">
+    <div class="nav-menu__title text-sm font-bold text-black">Навигация</div>
+    <ul class="nav-menu__list">
       {% for item in commonData.navigation %}
-      <li class="mobile-menu__item">
+      <li class="nav-menu__item">
         {% if item.childrens %}
-        <a class="mobile-menu__link text-xs text-black" href="javascript:void(0)">
+        <a class="nav-menu__link text-xs text-black" href="javascript:void(0)">
           {{ item.title }}
         </a>
-        <ul class="mobile-submenu__list">
+        <ul class="nav-menu__sublist">
           {% for child in item.childrens %}
-          <li class="mobile-submenu__item">
+          <li class="nav-menu__subitem">
             <a
-              class="mobile-submenu__link text-xs text-black"
+              class="nav-menu__sublink text-xs text-black"
               href="{{ child.url }}"
             >
               {{ child.title }}
@@ -21,7 +21,7 @@
           {% endfor %}
         </ul>
         {% else %}
-        <a class="mobile-menu__link text-xs text-black" href="{{ item.url }}">
+        <a class="nav-menu__link text-xs text-black" href="{{ item.url }}">
           {{ item.title }}
         </a>
         {% endif %}
@@ -30,12 +30,12 @@
     </ul>
   </div>
 
-  <div class="mobile-menu__contacts">
-    <div class="mobile-menu__title text-sm font-bold text-black">Контакты</div>
-    <ul class="mobile-menu__list">
+  <div class="mobile-menu__contacts contacts-menu">
+    <div class="contacts-menu__title text-sm font-bold text-black">Контакты</div>
+    <ul class="contacts-menu__list">
       {% for item in commonData.contacts %}
-      <li class="mobile-menu__item">
-        <a class="mobile-menu__link text-xl text-black" href="{{ item.url }}">
+      <li class="contacts-menu__item">
+        <a class="contacts-menu__link text-xl text-black" href="{{ item.url }}">
           {{ item.title }}
         </a>
       </li>
@@ -43,12 +43,12 @@
     </ul>
   </div>
 
-  <div class="mobile-menu__socials">
-    <div class="mobile-menu__title text-sm font-bold">Социальные сети</div>
-    <ul class="mobile-menu__list">
+  <div class="mobile-menu__socials socials-menu">
+    <div class="socials-menu__title text-sm font-bold">Социальные сети</div>
+    <ul class="socials-menu__list">
       {% for item in commonData.socials %}
-      <li class="mobile-menu__item">
-        <a class="mobile-menu__link text-xs" href="{{ item.url }}">
+      <li class="socials-menu__item">
+        <a class="socials-menu__link text-xs" href="{{ item.url }}" aria-label="{{ item.title }}">
           <img src="{{ item.image }}" alt="">
         </a>
       </li>

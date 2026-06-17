@@ -1,76 +1,95 @@
+.footer {
+  padding-block: 40px 30px;
+}
+
 .footer__wrapper {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
+  gap: 40px;
+}
+.footer__logo {
+    max-width: 50vw;
 }
 
-.footer__logo {
-}
 .footer__menu {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+  max-width: 760px;
 }
+
 .footer__menu-top {
   display: flex;
-}
-.footer-menu__navigations {
-}
-.footer-menu__title {
-}
-.text-sm {
-}
-.font-bold {
-}
-.text-black {
+  justify-content: space-between;
+  gap: 40px;
 }
 
-.footer-menu__item {
+.footer__navigations,
+.footer__contacts {
+  min-width: 180px;
 }
-.footer-menu__link {
-}
-.text-xs {
-}
-.footer-submenu__list {
-}
-.footer-submenu__item {
-}
-.footer-submenu__link {
-}
-.footer-menu__contacts {
-}
-.text-xl {
-}
+
 .footer__menu-bottom {
-    display: flex;
-
-        border-top: 1px solid #d9d9d9;
-    padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  border-top: 1px solid #d9d9d9;
+  padding-top: 20px;
 }
-.footer-menu__socials {
 
-    
-
-    .footer-menu__list {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        align-items: start;
-        justify-content: start;
-    }
-
-    .footer-menu__link {
-        border: 0.70px solid var(--yellow);
-        border-radius: 70px;
-        width: 42px;
-        height: 42px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.footer__socials {
+    min-width: 170px;
 }
-.footer-button {
+
+.footer__button {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    gap: 12px;
+  min-width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(18px, 2vw, 20px);
+  gap: 12px;
+  padding-block: 33px;
+}
+.footer__menu {
+  max-width: 692px;
+  .nav-menu__title,
+  .contacts-menu__title,
+  .socials-menu__title {
+    padding-bottom: clamp(10px, 1.5vw, 20px);
+  }
+
+  .socials-menu__link {
+    width: clamp(42px, 5vw, 60px);
+    height: clamp(42px, 5vw, 60px);
+  }
+}
+
+.footer-policy {
+  margin-top: auto;
+}
+
+@media (max-width: 768px) {
+  .footer__wrapper {
+    flex-direction: column;
+  }
+
+  .footer__wrapper,
+  .footer__menu,
+  .footer__menu-top,
+  .footer__menu-bottom {
+    gap: 30px;
+  }
+
+  .footer__menu {
+    max-width: none;
+    width: 100%;
+  }
+.footer__button {
+    padding-block: 20px;
+}
+
 }
