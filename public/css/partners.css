@@ -1,0 +1,27 @@
+.partners {
+    background: var(--background);
+}
+.container {
+}
+.partners__wrapper {
+    padding-block: clamp(80px, 10vw, 120px);
+}
+
+.partners__title {
+    text-align: center;
+    padding-bottom: clamp(20px, 3vw, 40px);
+}
+.partners__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.partners__item {
+    padding-inline: clamp(26px, 3vw, 34px);
+    padding-block: clamp(28px, 3.5vw, 43px);
+    border-radius: 12px;
+    border: 1px solid #e8e8e8;
+    img {
+        width: clamp(102px, 13vw, 153px);
+    }
+}
