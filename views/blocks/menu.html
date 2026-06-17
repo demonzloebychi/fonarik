@@ -1,0 +1,27 @@
+<nav class="header-menu__nav">
+  <ul class="header-menu__list">
+    {% for item in commonData.navigation %}
+    <li class="header-menu__item">
+      {% if item.childrens %}
+      <a class="header-menu__link" href="javascript:void(0)">
+        {{ item.title }}
+      </a>
+      <ul class="header-submenu__list">
+        {% for child in item.childrens %}
+        <li class="header-submenu__item">
+          <a
+            class="header-submenu__link text-md text-black"
+            href="{{ child.url }}"
+          >
+            {{ child.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <a class="header-menu__link text-black" href="{{ item.url }}"> {{ item.title }} </a>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</nav>

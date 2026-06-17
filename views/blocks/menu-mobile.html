@@ -1,0 +1,58 @@
+<nav class="mobile-menu__nav">
+  <div class="mobile-menu__navigations">
+    <div class="mobile-menu__title text-sm font-bold text-black">Навигация</div>
+    <ul class="mobile-menu__list">
+      {% for item in commonData.navigation %}
+      <li class="mobile-menu__item">
+        {% if item.childrens %}
+        <a class="mobile-menu__link text-xs text-black" href="javascript:void(0)">
+          {{ item.title }}
+        </a>
+        <ul class="mobile-submenu__list">
+          {% for child in item.childrens %}
+          <li class="mobile-submenu__item">
+            <a
+              class="mobile-submenu__link text-xs text-black"
+              href="{{ child.url }}"
+            >
+              {{ child.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+        {% else %}
+        <a class="mobile-menu__link text-xs text-black" href="{{ item.url }}">
+          {{ item.title }}
+        </a>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="mobile-menu__contacts">
+    <div class="mobile-menu__title text-sm font-bold text-black">Контакты</div>
+    <ul class="mobile-menu__list">
+      {% for item in commonData.contacts %}
+      <li class="mobile-menu__item">
+        <a class="mobile-menu__link text-xl text-black" href="{{ item.url }}">
+          {{ item.title }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <div class="mobile-menu__socials">
+    <div class="mobile-menu__title text-sm font-bold">Социальные сети</div>
+    <ul class="mobile-menu__list">
+      {% for item in commonData.socials %}
+      <li class="mobile-menu__item">
+        <a class="mobile-menu__link text-xs" href="{{ item.url }}">
+          <img src="{{ item.image }}" alt="">
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>

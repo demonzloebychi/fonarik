@@ -61,7 +61,7 @@ module.exports = {
     },
   ],
 
-  contactsFooter: [
+  contacts: [
     {
         title: '+7 912 345 67 89',
         url: 'tel:+7 912 345 67 89',
@@ -77,12 +77,12 @@ module.exports = {
     {
         title: 'vk',
         url: '/vk',
-        image: 'dsd',
+        image: 'img/svg/vk.svg',
     },
     {
         title: 'tg',
         url: '/tg',
-        image: 'dsd',
+        image: 'img/svg/tg.svg',
     },
   ],
 
@@ -153,9 +153,9 @@ module.exports = {
   ],
 
 
-  advantages: fakeData.index.advantages,
+//   advantages: fakeData.index.advantages,
 
-  catalog: fakeData.index.catalog,
+//   catalog: fakeData.index.catalog,
 
 
   // Добавьте другие общие блоки, если нужно

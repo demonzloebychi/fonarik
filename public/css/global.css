@@ -1,0 +1,110 @@
+body {
+    --accent-color: #DFA055;
+    --red: #E75050;
+    --white: #fff;
+    --black: #333333;
+    --yellow: #E7D050;
+    --font-family: 'TikTokSans', sans-serif;
+    --background: #FCF7F4;
+    font-family: var(--font-family);
+
+}
+body.lock {
+    overflow: hidden;
+}
+.main {
+  /* padding-top: var(--header-total-height); */
+    padding-top: 120px;
+
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+
+
+.text-xs {
+    font-size: 14px;
+    font-weight: 400;
+}
+.text-sm {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.text-lg {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.text-xl {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.text-number {
+    font-size: 28px;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+h3, .h3, .text-2xl {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+h2, .h2, .text-3xl {
+    font-size: 48px;
+    font-weight: 600;
+}
+
+h1, .h1, .text-4xl {
+    font-size: 64px;
+    font-weight: 600;
+}
+
+
+.font-bold {
+    font-weight: 700;
+}
+.text-black {
+    color: var(--black);
+}
+
+
+button, .button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    border-radius: 100px;
+}
+.button-red {
+    background-color: var(--red);
+    color: var(--white);
+    font-size: 12px;
+    padding-inline: 18px;
+    padding-block: 10px;
+}
+.button-red-big {
+    background-color: var(--red);
+    color: var(--white);
+    padding-inline: 40px;
+    padding-block: 14px;
+}
+.button-yellow {
+    background: var(--yellow);
+    padding-inline: 18px;
+    padding-block: 14px;
+}
+.button-yellow-secondary {
+    border: 1px solid var(--yellow);
+    background: transparent;
+    padding-inline: 28px;
+    padding-block: 14px;
+}
+.button-circle {
+    width: 200px;
+    height: 200px;
+}

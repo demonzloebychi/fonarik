@@ -1,0 +1,30 @@
+<header class="header">
+  <div class="container">
+    <div class="header__wrapper">
+      <a href="/" class="header__logo logo">
+        <img src="img/logo.png" alt="" />
+      </a>
+      <div class="header__menu-desktop">
+        {% include "blocks/menu.html" %} 
+
+      </div>
+        
+
+      <div class="header__actions">
+        <a href="" class="header__button button button-red">
+          <span> Помочь </span>
+          <img src="img/svg/smile.svg" />
+        </a>
+
+        <button class="header-burger">
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="header__menu-mobile">
+
+        {% include "blocks/menu-mobile.html" %} 
+    </div>
+  </div>
+</header>
