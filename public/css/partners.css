@@ -8,13 +8,14 @@
 }
 
 .partners__title {
-    text-align: center;
-    padding-bottom: clamp(20px, 3vw, 40px);
+    padding-bottom: clamp(30px, 3vw, 55px);
 }
 
 .partners__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
+    align-items: center;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -22,11 +23,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-inline: clamp(26px, 3vw, 34px);
+    /* padding-inline: clamp(26px, 3vw, 34px);
     padding-block: clamp(28px, 3.5vw, 43px);
     border-radius: 12px;
-    border: 1px solid #e8e8e8;
+    border: 1px solid #e8e8e8; */
     img {
-        width: clamp(102px, 13vw, 153px);
+        /* width: clamp(102px, 13vw, 153px); */
+        max-width: 100%;
     }
 }

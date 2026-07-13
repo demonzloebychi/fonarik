@@ -54,10 +54,10 @@
 }
 
 .socials-menu__link {
-  border: 0.7px solid var(--yellow);
+  border: 2px solid var(--black);
   border-radius: 70px;
-  width: 42px;
-  height: 42px;
+  width: 55px;
+  height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;

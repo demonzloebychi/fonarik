@@ -9,7 +9,7 @@
 
       <div class="footer__menu">
         <div class="footer__menu-top">
-          <nav class="footer__navigations nav-menu" aria-label="Навигация в футере">
+          <nav class="footer__menu-top-col footer__navigations nav-menu" aria-label="Навигация">
             <div class="nav-menu__title text-sm font-bold text-black">
               Навигация
             </div>
@@ -48,7 +48,7 @@
             </ul>
           </nav>
 
-          <div class="footer__contacts contacts-menu">
+          <div class="footer__menu-top-col footer__contacts contacts-menu" aria-label="Контакты">
             <div class="contacts-menu__title text-sm font-bold text-black">
               Контакты
             </div>
@@ -67,10 +67,8 @@
 
             <a class="footer-policy text-xs text-black" href="/policy/">Политика обработки персональных данных</a>
           </div>
-        </div>
 
-        <div class="footer__menu-bottom">
-          <div class="footer__socials socials-menu">
+          <div class="footer__menu-top-col footer__socials socials-menu" aria-label="Социальные сети">
             <div class="socials-menu__title text-sm font-bold">
               Социальные сети
             </div>
@@ -84,6 +82,11 @@
               {% endfor %}
             </ul>
           </div>
+
+        </div>
+
+        <div class="footer__menu-bottom">
+          
 
           <a href="" class="button button-red footer__button">
             <img src="img/svg/smile.svg" alt="smile" width="29px" height="16px">
