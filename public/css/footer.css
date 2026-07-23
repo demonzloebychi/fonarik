@@ -71,7 +71,7 @@
   margin-top: auto;
 }
   .footer__menu-top {
-    gap: 50px;
+    gap: clamp(40px, 7vw, 90px);
   }
 @media (max-width: 768px) {
   .footer__wrapper {
@@ -95,4 +95,9 @@
 .footer__socials {
     min-width: 150px;
 }
+}
+
+
+.footer__menu-top-col {
+  max-width: 168px;
 }

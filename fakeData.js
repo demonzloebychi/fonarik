@@ -171,29 +171,46 @@ module.exports = {
 
     partners: [
       {
-        name: "akticom",
-        image: "img/partners/akticom.png",
-        url: "https://akticom.ru",
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
       },
       {
-        name: "akticom",
-        image: "img/partners/akticom.png",
-        url: "https://akticom.ru",
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
       },
       {
-        name: "akticom",
-        image: "img/partners/akticom.png",
-        url: "https://akticom.ru",
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
       },
       {
-        name: "akticom",
-        image: "img/partners/akticom.png",
-        url: "https://akticom.ru",
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
       },
       {
-        name: "akticom",
-        image: "img/partners/akticom.png",
-        url: "https://akticom.ru",
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },
+            {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },      {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },      {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },      {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
       },
     ],
 
