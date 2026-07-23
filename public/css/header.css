@@ -1,9 +1,9 @@
 .header {
   position: fixed;
   width: 100%;
-  background: var(--light-color);
+  background: var(--white);
   z-index: 10;
-  top: 15px;
+  top: 0;
 }
 
 .header__wrapper {
@@ -13,10 +13,14 @@
   gap: 10px;
   padding-inline: clamp(15px, 2vw, 25px);
   padding-block: clamp(5px, 1vw, 14px);
-  background-color: var(--white);
-  border-radius: 30px;
+  /* background-color: var(--white);
+  border-radius: 30px; */
   position: relative;
   z-index: 11;
+}
+
+.header__logo {
+  height: 111px;
 }
 
 .header-menu__nav {

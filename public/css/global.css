@@ -1,6 +1,6 @@
 body {
     --accent-color: #DFA055;
-    --red: #E75050;
+    --red: #ED314D;
     --white: #fff;
     --black: #333333;
     --yellow: #E7D050;
@@ -97,8 +97,12 @@ button, .button {
 .button-red-big {
     background-color: var(--red);
     color: var(--white);
-    padding-inline: 40px;
-    padding-block: 14px;
+    padding-inline: 46px;
+    padding-block: 29px;
+    flex-direction: column;
+    gap: 7px;
+    border-radius: 80px;
+
 }
 .button-yellow {
     background: var(--yellow);
