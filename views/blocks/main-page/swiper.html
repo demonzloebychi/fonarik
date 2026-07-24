@@ -1,0 +1,32 @@
+ <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">Слайд 1</div>
+            <div class="swiper-slide">Слайд 2</div>
+            <div class="swiper-slide">Слайд 3</div>
+        </div>
+        <!-- Пагинация (точки) -->
+        <div class="swiper-pagination"></div>
+        <!-- Кнопки навигации -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    
+    <!-- Инициализируем слайдер -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            loop: true, // Бесконечная прокрутка
+            spaceBetween: 30, // Расстояние между слайдами
+            autoplay: {
+                delay: 2500, // Смена слайда каждые 2.5 секунды
+                disableOnInteraction: false, // Продолжать автопрокрутку после клика
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true, // Разрешить клик по точкам
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>

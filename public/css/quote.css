@@ -1,0 +1,126 @@
+/* Блок с фоновым градиентом */
+.quote-section {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    rgba(140, 91, 255, 0) 0%,
+    rgba(130, 85, 255, 0.9) 100%
+  );
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.quote-section__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 60px 20px 0 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  /* gap: 40px; */
+  box-sizing: border-box;
+}
+
+/* Левая колонка с текстом */
+.quote-section__content {
+  flex: 1;
+  max-width: 620px;
+  padding-bottom: 60px; /* Отступ снизу для текста */
+  align-self: center;
+}
+
+/* Желтая цитата */
+.quote-section__quote {
+  margin: 0 0 32px 0;
+  font-family: var(--font-family);
+  font-weight: 700;
+  /* clamp: 375px -> 20px, 1440px -> 40px */
+  font-size: clamp(1.25rem, 0.968rem + 1.203vw, 2.5rem);
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #fff29b;
+}
+
+.quote-section__author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Черное имя */
+.quote-section__author-name {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: 700;
+  /* clamp: 375px -> 24px, 1440px -> 32px */
+  font-size: clamp(1.5rem, 1.387rem + 0.481vw, 2rem);
+  line-height: 110%; /* В CSS 63% приведёт к наложению строк, поставил безопасный 110% */
+  text-transform: uppercase;
+  color: #000000;
+}
+
+/* Черный основной текст */
+.quote-section__text {
+  margin: 0;
+  font-family: var(--second-family);
+  font-weight: 400;
+  /* clamp: 375px -> 14px, 1440px -> 20px */
+  font-size: clamp(0.875rem, 0.79rem + 0.361vw, 1.25rem);
+  line-height: 140%;
+  color: #000000;
+}
+
+/* Правая колонка с картинкой */
+.quote-section__person {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.quote-section__person-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+@media (max-width: 1220px) {
+  .quote-section__person {
+    max-width: 550px;
+  }
+}
+/* Мобильная адаптация */
+@media (max-width: 991px) {
+  .quote-section {
+    background: linear-gradient(180deg, rgba(140, 91, 255, 0.2) 0%, rgba(130, 85, 255, 0.9) 100%);
+  }
+  .quote-section__container {
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 16px 0;
+  }
+
+  .quote-section__content {
+    max-width: 100%;
+    padding-bottom: 0;
+  }
+
+  .quote-section__quote {
+    margin-bottom: 24px;
+    color: #fff29b;
+  }
+
+  .quote-section__author-info {
+    gap: 12px;
+    width: 100%;
+  }
+
+  .quote-section__person {
+    width: 100%;
+    max-width: 400px; 
+  }
+}

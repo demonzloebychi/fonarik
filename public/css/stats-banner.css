@@ -1,0 +1,66 @@
+/* Родительский блок создаёт контекст позиционирования */
+.stats-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 180px 0 240px;
+  background: var(--background);
+}
+
+/* Фоновая картинка под контентом */
+.stats-banner__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  pointer-events: none; /* Чтобы картинка не перехватывала клики и выделение */
+}
+
+/* Контейнер с контентом поверх фона */
+.stats-banner__container {
+  position: relative;
+  z-index: 2;
+}
+
+.stats-banner {
+}
+.stats-banner__bg {
+}
+.stats-banner__container {
+  margin: 0 auto;
+  padding: 0 35px;
+  display: flex;
+  justify-content: center;
+}
+.stats-banner__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.stats-banner__label {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 36px);
+  text-transform: uppercase;
+  color: #fff;
+}
+.stats-banner__amount {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: clamp(48px, 9vw, 160px);
+  text-align: center;
+  color: var(--black);
+}
+.stats-banner__description {
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: clamp(15px, 2vw, 27px);
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+}
