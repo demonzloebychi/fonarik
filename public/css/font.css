@@ -1,22 +1,33 @@
 @font-face {
-    font-family: InterTight;
+    font-family: TikTokSans;
     font-weight: 400;
     src: url(/fonts/TikTokSans.ttf);
 }
 
 @font-face {
-    font-family: InterTight;
+    font-family: TikTokSans;
     font-weight: 500;
     src: url(/fonts/TikTokSans.ttf);
 }
 
 @font-face {
-    font-family: InterTight;
+    font-family: TikTokSans;
     font-weight: 700;
     src: url(/fonts/TikTokSans.ttf);
 }
 @font-face {
-    font-family: InterTight;
+    font-family: TikTokSans;
     font-weight: 600;
     src: url(/fonts/TikTokSans.ttf);
+}
+
+@font-face {
+    font-family: Helvetica;
+    font-weight: 700;
+    src: url(/fonts/helvetica_bold.otf);
+}
+@font-face {
+    font-family: Helvetica;
+    font-weight: 400;
+    src: url(/fonts/helvetica_regular.otf);
 }

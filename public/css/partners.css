@@ -12,11 +12,13 @@
 }
 
 .partners__list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(172px, 1fr));
+    /* display: grid; */
+    /* grid-template-columns: repeat(auto-fit, minmax(172px, 1fr)); */
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 55px 69px;
 }
 
 .partners__item {
@@ -30,5 +32,12 @@
     img {
         /* width: clamp(102px, 13vw, 153px); */
         max-width: 100%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .partners__item {
+        max-width: 130px;
     }
 }

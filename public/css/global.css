@@ -87,6 +87,7 @@ button, .button {
     align-items: center;
     gap: 4px;
     border-radius: 100px;
+    font-family: var(--second-family);
 }
 .button-red {
     background-color: var(--red);
@@ -101,7 +102,6 @@ button, .button {
     padding-inline: 46px;
     padding-block: 29px;
     flex-direction: column;
-    gap: 7px;
     border-radius: 80px;
 
 }
