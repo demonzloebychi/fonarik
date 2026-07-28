@@ -31,7 +31,9 @@
   </div>
 
   <div class="mobile-menu__contacts contacts-menu">
-    <div class="contacts-menu__title text-sm font-bold text-black">Контакты</div>
+    <div class="contacts-menu__title text-sm font-bold text-black">
+      Контакты
+    </div>
     <ul class="contacts-menu__list">
       {% for item in commonData.contacts %}
       <li class="contacts-menu__item">
@@ -48,11 +50,21 @@
     <ul class="socials-menu__list">
       {% for item in commonData.socials %}
       <li class="socials-menu__item">
-        <a class="socials-menu__link text-xs" href="{{ item.url }}" aria-label="{{ item.title }}">
-          <img src="{{ item.image }}" alt="">
+        <a
+          class="socials-menu__link text-xs"
+          href="{{ item.url }}"
+          aria-label="{{ item.title }}"
+        >
+          <img src="{{ item.image }}" alt="" />
         </a>
       </li>
       {% endfor %}
     </ul>
+  </div>
+  <div class="mobile-menu__button-box">
+    <a href="/help" class="button button-red-big button-red-big-no-size">
+      <span> помочь </span>
+      <img src="img/svg/smile.svg" />
+    </a>
   </div>
 </nav>

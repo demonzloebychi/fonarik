@@ -47,3 +47,10 @@ headerItems.forEach( headerItem => {
 // // Выполнить при изменении размера окна
 // window.addEventListener('resize', updateHeaderHeight);
 
+
+
+const header = document.querySelector('header');
+if (header) {
+  const height = header.offsetHeight;
+  document.documentElement.style.setProperty('--header-total-height', `${height}px`);
+}

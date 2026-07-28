@@ -64,3 +64,10 @@
   text-align: center;
   color: #000;
 }
+
+
+@media (max-width: 768px) {
+  .stats-banner {
+    padding: 100px 0 ; 
+  }
+}

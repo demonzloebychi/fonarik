@@ -28,7 +28,7 @@
 }
 
 /* Градиентное затемнение снизу для читаемости текста */
-.main-banner__overlay {
+/* .main-banner__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -36,7 +36,7 @@
   height: 100%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.5) 100%);
   z-index: 2;
-}
+} */
 
 /* Контейнер над фоном */
 .main-banner__container {
@@ -82,7 +82,7 @@
 /* Мобильная адаптация */
 @media (max-width: 767px) {
   .main-banner {
-    min-height: 100vh;
+    max-height: 550px;
     align-items: flex-end;
   }
 

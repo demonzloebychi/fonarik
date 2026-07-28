@@ -1,10 +1,25 @@
 .mobile-menu__nav {
   padding-inline: 15px;
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 140px);
+  /* display: flex;
+  flex-direction: column; */
+  /* height: calc(100vh - 140px); */
+  display: grid;
+  grid-template-areas:
+    "nav-menu contacts-menu"
+    "socials-menu socials-menu"
+    "button button";
+  justify-content: space-between;
+  align-items: start;
 }
-
+.nav-menu {
+  grid-area: nav-menu;
+}
+.contacts-menu {
+  grid-area: contacts-menu;
+}
+.socials-menu {
+  grid-area: socials-menu;
+}
 .mobile-menu__navigations .nav-menu__title {
   padding-bottom: 15px;
 }
@@ -25,11 +40,10 @@
   gap: 15px;
 }
 .contacts-menu {
-    display: flex;
+  display: flex;
   flex-direction: column;
 }
 
-  
 .contacts-menu__list {
   gap: 10px;
 }
@@ -68,13 +82,18 @@
 }
 
 .mobile-menu__contacts {
-  margin-top: 40px;
-
-
+  /* margin-top: 40px; */
 }
 
 .mobile-menu__socials {
-  border-top: 1px solid #d9d9d9;
-  padding-top: 20px;
-  margin-top: auto;
+  /* border-top: 1px solid #d9d9d9; */
+  padding-top: 39px;
+  /* margin-top: auto; */
 }
+
+.mobile-menu__button-box {
+  padding-top: 33px;
+  grid-area: button;
+}
+
+

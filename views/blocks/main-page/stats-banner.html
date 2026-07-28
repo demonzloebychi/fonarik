@@ -1,7 +1,11 @@
 <section class="stats-banner">
   <!-- Фоновое изображение для позиционирования через z-index -->
-  <img src="/img/main/gradients.png" alt="" class="stats-banner__bg" aria-hidden="true">
-
+  <picture class="stats-banner__bg-wrapper">
+    <!-- Картинка для мобилок (до 768px) -->
+    <source media="(max-width: 768px)" srcset="/img/main/gradients-mobile.png">
+    <!-- Дефолтная картинка для десктопа -->
+    <img src="/img/main/gradients.png" alt="" class="stats-banner__bg" aria-hidden="true">
+  </picture>
   <!-- Контент блока -->
   <div class="stats-banner__container">
     <div class="stats-banner__content">

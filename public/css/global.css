@@ -1,17 +1,17 @@
 body {
-    --accent-color: #DFA055;
-    --red: #ED314D;
-    --white: #fff;
-    --black: #333333;
-    --yellow: #E7D050;
-    --font-family: 'TikTokSans', sans-serif;
-    --second-family: 'Helvetica', sans-serif;
-    --background: rgba(255, 242, 155, 0.23);
-    font-family: var(--font-family);
-
+  --accent-color: #dfa055;
+  --red: #ed314d;
+  --white: #fff;
+  --black: #333333;
+  --yellow: #e7d050;
+  --purple: #7679b5;
+  --font-family: "TikTokSans", sans-serif;
+  --second-family: "Helvetica", sans-serif;
+  --background: rgba(255, 242, 155, 0.23);
+  font-family: var(--font-family);
 }
 body.lock {
-    overflow: hidden;
+  overflow: hidden;
 }
 .wrapper {
   display: flex;
@@ -20,103 +20,123 @@ body.lock {
   justify-content: space-between;
 }
 .main {
-  /* padding-top: var(--header-total-height); */
-    padding-top: 120px;
-
+  padding-top: var(--header-total-height);
+  /* padding-top: 120px; */
 }
 .container {
-    max-width: 1230px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 15px;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
 }
-
-
 
 .text-xs {
-    font-size: clamp(12px, 1.3vw, 14px);
-    font-weight: 400;
+  font-size: clamp(12px, 1.3vw, 14px);
+  font-weight: 400;
 }
 .text-sm {
-    font-size: 16px;
-    font-weight: 400;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .text-lg {
-    font-size: 18px;
-    font-weight: 400;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .text-xl {
-    font-size: clamp(18px, 2vw, 20px);
-    font-weight: 400;
+  font-size: clamp(18px, 2vw, 20px);
+  font-weight: 400;
 }
 
 .text-number {
-    font-size: 28px;
-    color: var(--accent-color);
-    font-weight: 600;
+  font-size: 28px;
+  color: var(--accent-color);
+  font-weight: 600;
 }
 
-h3, .h3, .text-2xl {
-    font-size: 36px;
-    font-weight: 600;
+h3,
+.h3,
+.text-2xl {
+  font-size: 36px;
+  font-weight: 600;
 }
 
-h2, .h2, .text-3xl {
-    font-size: 48px;
-    font-weight: 600;
+h2,
+.h2,
+.text-3xl {
+  font-size: 48px;
+  font-weight: 600;
 }
 
-h1, .h1, .text-4xl {
-    font-size: 64px;
-    font-weight: 600;
+h1,
+.h1,
+.text-4xl {
+  font-size: 64px;
+  font-weight: 600;
 }
-
 
 .font-bold {
-    font-weight: 700;
+  font-weight: 700;
 }
 .text-black {
-    color: var(--black);
+  color: var(--black);
 }
 
-
-button, .button {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    border-radius: 100px;
-    font-family: var(--second-family);
+button,
+.button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 100px;
+  font-family: var(--second-family);
 }
 .button-red {
-    background-color: var(--red);
-    color: var(--white);
-    font-size: 12px;
-    padding-inline: 18px;
-    padding-block: 10px;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: 12px;
+  padding-inline: 18px;
+  padding-block: 10px;
 }
 .button-red-big {
-    background-color: var(--red);
-    color: var(--white);
-    padding-inline: 46px;
-    padding-block: 29px;
-    flex-direction: column;
-    border-radius: 80px;
-
+  background-color: var(--red);
+  color: var(--white);
+  padding-inline: clamp(18px, 4vw, 46px);
+  padding-block: clamp(10px, 2vw, 29px);
+  flex-direction: column;
+  border-radius: clamp(32px, 5vw, 80px);
+  font-size: clamp(8px, 1.3vw, 20px);
+  text-transform: uppercase;
+  img {
+    width: clamp(25px, 4vw, 63px);
+  }
 }
 .button-yellow {
-    background: var(--yellow);
-    padding-inline: 18px;
-    padding-block: 14px;
+  background: var(--yellow);
+  padding-inline: 18px;
+  padding-block: 14px;
 }
 .button-yellow-secondary {
-    border: 1px solid var(--yellow);
-    background: transparent;
-    padding-inline: 28px;
-    padding-block: 14px;
+  border: 1px solid var(--yellow);
+  background: transparent;
+  padding-inline: 28px;
+  padding-block: 14px;
 }
 .button-circle {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
+}
+
+.button-red-big-no-size {
+  padding-block: 27px !important;
+  font-family: var(--second-family) !important;
+  font-weight: 400;
+  font-size: 20px !important;
+  text-align: center;
+  color: var(--white) !important;
+  border-radius: 80px !important;
+
+  img {
+    width: 59px !important;
+  }
 }

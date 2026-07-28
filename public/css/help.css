@@ -1,0 +1,440 @@
+/* ==========================================================================
+   HELP SECTION (Секция "Мы помогаем")
+   ========================================================================== */
+
+.help-section {
+  width: 100%;
+  padding: 60px 0;
+  box-sizing: border-box;
+  background: var(--background);
+}
+
+.help-section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Шапка секции */
+.help-section__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  gap: 7px;
+}
+
+.help-section__title {
+  font-size: clamp(36px, 4vw, 64px);
+  font-family: var(--font-family);
+font-weight: 700;
+line-height: 70%;
+text-align: center;
+color: var(--black);
+}
+.help-section__more-btn {
+  align-self: end;
+
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  color: var(--black);
+  border: 1px solid var(--black);
+  border-radius: 55px;
+  padding: 11px 20px;
+}
+
+.help-section__more-btn--mobile {
+  display: none;
+}
+
+/* Основная сетка (Форма слева + Слайдер справа) */
+.help-section__grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Ограничение Swiper внутри Grid */
+.help-section__slider {
+  width: 100%;
+  min-width: 0;
+  position: relative;
+  /* Важно для одинаковой высоты карточек в слайдере */
+  height: 100%;
+}
+
+.help-section__slider .swiper-wrapper {
+  align-items: stretch;
+}
+
+/* ==========================================================================
+   DONATION FORM (Красная форма пожертвования)
+   ========================================================================== */
+
+.donation-form {
+  background-color: #f13550;
+  border-radius: 24px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.donation-form__title {
+  margin-bottom: clamp(25px, 3.5vw, 52px);
+  text-align: center;
+
+  color: var(--white);
+
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: clamp(36px, 3.8vw, 40px);
+  line-height: 120%;
+}
+
+.donation-form__body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+/* Контейнер тумблера */
+.donation-form__type-toggle {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Элемент label растягивается на равные части */
+.donation-form__type-label {
+  flex: 1;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Скрываем стандартный инпут */
+.donation-form__type-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* Стилизация внешнего вида кнопки (по умолчанию - неактивная "Разово") */
+.donation-form__type-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  background-color: transparent;
+  color: var(--white);
+  transition: all 0.2s ease-in-out;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Активное состояние (когда radio checked) — белая таблетка с красным текстом */
+.donation-form__type-input:checked + .donation-form__type-btn {
+  background-color: var(--white);
+  border-color: var(--white);
+  color: var(--red); /* Красный цвет текста как на макете */
+}
+
+/* Состояние при ховере для неактивной кнопки */
+.donation-form__type-label:hover
+  .donation-form__type-input:not(:checked)
+  + .donation-form__type-btn {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Поля ввода */
+.donation-form__input {
+  width: 100%;
+  padding: 12px 18px;
+  border: 1px solid var(--white);
+  border-radius: 30px;
+  background: transparent;
+  outline: none;
+  box-sizing: border-box;
+  color: var(--white);
+}
+.donation-form__input::placeholder {
+  color: var(--white);
+}
+.donation-form__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.donation-form__subtitle {
+  display: block;
+  text-align: start;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: var(--white);
+}
+
+/* Кнопка и ссылка формы */
+.donation-form__submit-btn {
+  width: 100%;
+  padding-block: 11px;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 55px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: auto;
+
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  color: var(--red);
+}
+
+.donation-form__link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: clamp(16px, 1.8vw, 20px);
+  text-align: center;
+  color: #fff;
+}
+
+/* ==========================================================================
+   CHILD CARD (Карточка ребенка)
+   ========================================================================== */
+
+.child-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: auto; /* Для одинаковой высоты слайдов */
+  box-sizing: border-box;
+}
+
+/* Фиолетовая шапка с круглым аватором */
+.child-card__photo-wrapper {
+  background: linear-gradient(180deg, #e4d8fd 0%, #cbb5f8 100%);
+  padding: 24px 20px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.child-card__photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Контентная часть карточки */
+.child-card__content {
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.child-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+}
+
+.child-card__name {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: clamp(20px, 2.2vw, 24px);
+  line-height: 150%;
+  color: var(--black);
+}
+
+.child-card__age {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: clamp(16px, 1.7vw, 18px);
+  line-height: 150%;
+  color: var(--purple);
+}
+.child-card__diagnosis {
+  margin: 0 0 20px 0;
+  flex: 1;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: clamp(14px, 1.5vw, 16px);
+  color: var(--black);
+  opacity: 0.8;
+}
+
+/* Прогресс-бар */
+.child-card__progress {
+  margin-bottom: 20px;
+}
+
+.child-card__progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.child-card__name-amount {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--black);
+  opacity: 0.5;
+}
+.child-card__amount {
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: clamp(16px, 1.7vw, 20px);
+  color: var(--purple);
+}
+
+.child-card__bar {
+  width: 100%;
+  height: 15px;
+  background-color: #e6e6e6;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.child-card__bar-fill {
+  height: 100%;
+  background-color: var(--purple);
+  border-radius: 15px;
+}
+.child-card-button-prev,
+.child-card-button-next {
+    border-radius: 15px !important;
+    background: var(--red) !important;
+    height: 46px !important;
+    width: 46px !important;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Действия (кнопка + ссылка) */
+.child-card__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.child-card__btn {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 8px;
+  padding: 13px 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--red);
+  cursor: pointer;
+
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: #fff;
+}
+
+.child-card__link {
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: var(--red);
+}
+
+/* ==========================================================================
+   MOBILE ADAPTIVE (Экраны меньше 991px)
+   ========================================================================== */
+
+@media (max-width: 991px) {
+  .help-section {
+    padding: 40px 0;
+  }
+
+  .child-card__photo-wrapper {
+    height: 255px;
+  }
+
+
+  .donation-form__subtitle {
+    text-align: center;
+  }
+  .help-section__header {
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  /* Порядок на мобильном: Заголовок -> Слайдер -> Кнопка -> Форма */
+  .help-section__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .help-section__slider {
+    order: 1;
+  }
+
+  /* Перенос кнопки «Все истории» под слайдер */
+  .help-section__more-btn {
+    order: 2;
+    align-self: center;
+  }
+
+  .help-section__donation-form {
+    order: 3;
+    width: 100%;
+  }
+
+  .child-card__photo {
+    width: 150px;
+    height: 150px;
+  }
+
+  .help-section__more-btn--desktop {
+    display: none;
+  }
+  .help-section__more-btn--mobile {
+    display: block;
+  }
+}

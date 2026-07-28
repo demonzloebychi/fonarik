@@ -1,6 +1,15 @@
 <footer class="footer">
   <div class="footer__background">
-    <img src="/img/gradients-footer.png" alt="">
+    <picture>
+      <source
+        media="(max-width: 768px)"
+        srcset="/img/gradients-footer-mobile.png"
+      />
+      <img
+        src="/img/gradients-footer.png"
+        aria-hidden="true"
+      />
+    </picture>
   </div>
   <div class="container">
     <div class="footer__wrapper">
@@ -12,7 +21,10 @@
 
       <div class="footer__menu">
         <div class="footer__menu-top">
-          <nav class="footer__menu-top-col footer__navigations nav-menu" aria-label="Навигация">
+          <nav
+            class="footer__menu-top-col footer__navigations nav-menu"
+            aria-label="Навигация"
+          >
             <div class="nav-menu__title text-sm font-bold text-black">
               Навигация
             </div>
@@ -51,7 +63,10 @@
             </ul>
           </nav>
 
-          <div class="footer__menu-top-col footer__contacts contacts-menu" aria-label="Контакты">
+          <div
+            class="footer__menu-top-col footer__contacts contacts-menu"
+            aria-label="Контакты"
+          >
             <div class="contacts-menu__title text-sm font-bold text-black">
               Контакты
             </div>
@@ -68,31 +83,36 @@
               {% endfor %}
             </ul>
 
-            <a class="footer-policy text-xs text-black" href="/policy/">Политика обработки персональных данных</a>
+            <a class="footer-policy text-xs text-black" href="/policy/"
+              >Политика обработки персональных данных</a
+            >
           </div>
 
-          <div class="footer__menu-top-col footer__socials socials-menu" aria-label="Социальные сети">
+          <div
+            class="footer__menu-top-col footer__socials socials-menu"
+            aria-label="Социальные сети"
+          >
             <div class="socials-menu__title text-sm font-bold">
               Социальные сети
             </div>
             <ul class="socials-menu__list">
               {% for item in commonData.socials %}
               <li class="socials-menu__item">
-                <a class="socials-menu__link text-xs" href="{{ item.url }}" aria-label="{{ item.title }}">
+                <a
+                  class="socials-menu__link text-xs"
+                  href="{{ item.url }}"
+                  aria-label="{{ item.title }}"
+                >
                   <img src="{{ item.image }}" alt="" />
                 </a>
               </li>
               {% endfor %}
             </ul>
           </div>
-
         </div>
 
         <div class="footer__menu-bottom">
-          
-
-
-          <a href="/help" class="footer__button button button-red-big">
+          <a href="/help" class="footer__button button button-red-big button-red-big-no-size">
             <span> помочь </span>
             <img src="img/svg/smile.svg" />
           </a>

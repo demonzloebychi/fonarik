@@ -1,40 +1,95 @@
 module.exports = {
-  contacts: {
-    breadcrumbs: [
-      {
-        title: "Главная",
-        url: "/",
-      },
-      {
-        title: "Контакты",
-        url: "/contacts",
-      },
-    ],
-
-    contactsInfo: [
-      {
-        img: "phone.svg",
-        key: "Телефон",
-        value: "8 800 123 456",
-        valueHref: "tel:+7800123456",
-      },
-      {
-        img: "email.svg",
-        key: "E-mail",
-        value: "mail@example.com",
-        valueHref: "mailto:mail@example.com",
-      },
-      {
-        img: "location.svg",
-        key: "Адрес",
-        value: "г. Москва, ул. Пример, 123",
-        valueHref: "#",
-      },
-    ],
-  },
   index: {
     title: "Главная",
     showCatalogTitle: true,
+    partners: [
+      {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },
+      {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },
+      {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },
+      {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },
+      {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },
+            {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },      {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },      {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },      {
+        name: "fonarik",
+        image: "img/partners/fonarik.png",
+        url: "https://fonarik.ru",
+      },
+    ],
+
+    children: [
+      {
+        id: 1,
+        name: "Петров Сергей",
+        age: "12 лет",
+        image: "img/children/sergey.png",
+        diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "462 379 руб.",
+        progressPercent: 45,
+        url: "/stories/petrov-sergey"
+      },
+      {
+        id: 2,
+        name: "Миронова Евгения",
+        age: "12 лет",
+        image: "img/children/evgeniya.png",
+        diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "462 379 руб.",
+        progressPercent: 30,
+        url: "/stories/mironova-evgeniya"
+      },
+      // {
+      //   id: 3,
+      //   name: "Иванов Алексей",
+      //   age: "8 лет",
+      //   image: "img/children/alexey.jpg",
+      //   diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      //   targetAmount: "120 000 руб.",
+      //   progressPercent: 70,
+      //   url: "/stories/ivanov-alexey"
+      // },
+      // {
+      //   id: 4,
+      //   name: "Смирнова Анна",
+      //   age: "5 лет",
+      //   image: "img/children/anna.jpg",
+      //   diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      //   targetAmount: "850 000 руб.",
+      //   progressPercent: 15,
+      //   url: "/stories/smirnova-anna"
+      // },
+    ],
+
     banners: [
       {
         name: "Совершенство каждой детали",
@@ -169,55 +224,46 @@ module.exports = {
       },
     ],
 
-    partners: [
-      {
-        name: "fonarik",
-        image: "img/partners/fonarik.png",
-        url: "https://fonarik.ru",
-      },
-      {
-        name: "fonarik",
-        image: "img/partners/fonarik.png",
-        url: "https://fonarik.ru",
-      },
-      {
-        name: "fonarik",
-        image: "img/partners/fonarik.png",
-        url: "https://fonarik.ru",
-      },
-      {
-        name: "fonarik",
-        image: "img/partners/fonarik.png",
-        url: "https://fonarik.ru",
-      },
-      {
-        name: "fonarik",
-        image: "img/partners/fonarik.png",
-        url: "https://fonarik.ru",
-      },
-            {
-        name: "fonarik",
-        image: "img/partners/fonarik.png",
-        url: "https://fonarik.ru",
-      },      {
-        name: "fonarik",
-        image: "img/partners/fonarik.png",
-        url: "https://fonarik.ru",
-      },      {
-        name: "fonarik",
-        image: "img/partners/fonarik.png",
-        url: "https://fonarik.ru",
-      },      {
-        name: "fonarik",
-        image: "img/partners/fonarik.png",
-        url: "https://fonarik.ru",
-      },
-    ],
+    
 
     newsBlockListTitle: "Следите за нашими новостями",
     showAllNewsLink: true,
   },
 
+  contacts: {
+    breadcrumbs: [
+      {
+        title: "Главная",
+        url: "/",
+      },
+      {
+        title: "Контакты",
+        url: "/contacts",
+      },
+    ],
+
+    contactsInfo: [
+      {
+        img: "phone.svg",
+        key: "Телефон",
+        value: "8 800 123 456",
+        valueHref: "tel:+7800123456",
+      },
+      {
+        img: "email.svg",
+        key: "E-mail",
+        value: "mail@example.com",
+        valueHref: "mailto:mail@example.com",
+      },
+      {
+        img: "location.svg",
+        key: "Адрес",
+        value: "г. Москва, ул. Пример, 123",
+        valueHref: "#",
+      },
+    ],
+  },
+  
   catalog: {
     showCatalogTitle: false,
     breadcrumbs: [
@@ -287,7 +333,7 @@ module.exports = {
       },
       {
         title: "Рулевые наконечники",
-        url: "/catalogCategory",
+        url: "/ catalogCategory",
       },
       {
         title: "Рулевой наконечник S08838R",
