@@ -77,12 +77,12 @@ module.exports = {
     {
         title: 'vk',
         url: '/vk',
-        image: 'img/svg/vk.svg',
+        image: '/img/svg/vk.svg',
     },
     {
         title: 'tg',
         url: '/tg',
-        image: 'img/svg/tg.svg',
+        image: '/img/svg/tg.svg',
     },
   ],
 
