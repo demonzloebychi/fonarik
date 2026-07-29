@@ -1,0 +1,18 @@
+<section class="needs-help">
+  <div class="needs-help__container">
+    <h2 class="needs-help__title">Мы помогаем</h2>
+
+    <div class="needs-help__grid">
+      {% for child in cards %}
+        {% include "components/child-card.html" %}
+      {% endfor %}
+    </div>
+
+    <button type="button" class="needs-help__more-btn">
+      <span>Показать еще</span>
+      <svg class="needs-help__more-icon" width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1.5 1.5L7.5 5L1.5 8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+</section>

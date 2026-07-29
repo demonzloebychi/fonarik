@@ -1,0 +1,50 @@
+<article class="child-card">
+  <div class="child-card__photo-wrapper">
+    <img
+      src="{{ child.image }}"
+      alt="{{ child.name }}"
+      class="child-card__photo"
+    />
+  </div>
+
+  <div class="child-card__content">
+    <div class="child-card__header">
+      <h3 class="child-card__name">{{ child.name }}</h3>
+      <span class="child-card__age">{{ child.age }}</span>
+    </div>
+
+    <p class="child-card__diagnosis">Диагноз ребенка: {{ child.diagnosis }}</p>
+
+    <div class="child-card__progress">
+      <div class="child-card__progress-info">
+        <span class="child-card__name-amount">Осталось собрать</span>
+        <strong class="child-card__amount">{{ child.targetAmount }}</strong>
+      </div>
+      <div class="child-card__bar">
+        <div
+          class="child-card__bar-fill"
+          style="width: {{ child.progressPercent }}%;"
+        ></div>
+      </div>
+    </div>
+
+    <div class="child-card__actions">
+      <button type="button" class="child-card__btn">
+        <span>Помочь</span>
+        <svg
+          width="9"
+          height="10"
+          viewBox="0 0 9 10"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8.99998 4.04623V5.95377C8.99997 6.02276 8.9753 6.08891 8.9314 6.13769C8.8875 6.18647 8.82795 6.21388 8.76587 6.21389H5.5925V9.73985C5.59251 9.77401 5.58646 9.80784 5.57469 9.83941C5.56293 9.87097 5.54569 9.89965 5.52395 9.9238C5.50221 9.94796 5.4764 9.96712 5.44799 9.98019C5.41958 9.99326 5.38914 9.99998 5.35839 9.99997H3.64161C3.51245 9.99997 3.4075 9.88362 3.4075 9.73985V6.21389H0.234108C0.172021 6.21388 0.112479 6.18647 0.0685762 6.13769C0.0246739 6.08891 6.83743e-06 6.02276 0 5.95377L0 4.04623C6.83743e-06 3.97725 0.0246739 3.91109 0.0685762 3.86231C0.112479 3.81353 0.172021 3.78612 0.234108 3.78611H3.4075V0.26012C3.4075 0.116351 3.51242 0 3.64161 0H5.35839C5.42048 7.59714e-06 5.48002 0.0274155 5.52392 0.0761958C5.56783 0.124976 5.59249 0.191134 5.5925 0.26012V3.78611H8.76587C8.79661 3.7861 8.82706 3.79283 8.85546 3.8059C8.88387 3.81897 8.90968 3.83813 8.93142 3.86228C8.95316 3.88644 8.97041 3.91512 8.98217 3.94668C8.99393 3.97824 8.99998 4.01207 8.99998 4.04623Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+      <a href="{{ child.url }}" class="child-card__link">Узнать историю</a>
+    </div>
+  </div>
+</article>

@@ -8,7 +8,7 @@ module.exports = {
     },
     {
       title: 'Нужна помощь',
-      url: '/need-help/',
+      url: '/we-help/',
     },
     // {
     //   title: 'Качество',

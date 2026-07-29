@@ -28,19 +28,22 @@ module.exports = {
         image: "img/partners/fonarik.png",
         url: "https://fonarik.ru",
       },
-            {
+      {
         name: "fonarik",
         image: "img/partners/fonarik.png",
         url: "https://fonarik.ru",
-      },      {
+      },
+      {
         name: "fonarik",
         image: "img/partners/fonarik.png",
         url: "https://fonarik.ru",
-      },      {
+      },
+      {
         name: "fonarik",
         image: "img/partners/fonarik.png",
         url: "https://fonarik.ru",
-      },      {
+      },
+      {
         name: "fonarik",
         image: "img/partners/fonarik.png",
         url: "https://fonarik.ru",
@@ -53,20 +56,22 @@ module.exports = {
         name: "Петров Сергей",
         age: "12 лет",
         image: "img/children/sergey.png",
-        diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        diagnosis:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         targetAmount: "462 379 руб.",
         progressPercent: 45,
-        url: "/stories/petrov-sergey"
+        url: "/stories/petrov-sergey",
       },
       {
         id: 2,
         name: "Миронова Евгения",
         age: "12 лет",
         image: "img/children/evgeniya.png",
-        diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        diagnosis:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
         targetAmount: "462 379 руб.",
         progressPercent: 30,
-        url: "/stories/mironova-evgeniya"
+        url: "/stories/mironova-evgeniya",
       },
       // {
       //   id: 3,
@@ -110,7 +115,7 @@ module.exports = {
           "Бескомпромиссное премиальное качество продукции для самых требовательных автомобилистов",
       },
     ],
-    
+
     advantages: [
       {
         title: "Надежность и долговечность",
@@ -225,8 +230,6 @@ module.exports = {
       },
     ],
 
-    
-
     newsBlockListTitle: "Следите за нашими новостями",
     showAllNewsLink: true,
   },
@@ -264,7 +267,7 @@ module.exports = {
       },
     ],
   },
-  
+
   catalog: {
     showCatalogTitle: false,
     breadcrumbs: [
@@ -297,6 +300,62 @@ module.exports = {
   },
 
   about: {
+    teamMembers: [
+      {
+        name: "Петров Алексей",
+        role: "Учредитель фонда Фонарик",
+        image: "/img/team/petrov.webp",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text",
+      },
+      {
+        name: "Андреев Дмитрий",
+        role: "Название должности",
+        image: "/img/team/andreev.webp",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text Lorem Ipsum has been the industry's standard dummy text",
+      },
+      {
+        name: "Иванова Валерия",
+        role: "Название должности",
+        image: "/img/team/ivanova.webp",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text Lorem Ipsum has been the industry's standard dummy text",
+      },
+      {
+        name: "Андреев Дмитрий",
+        role: "Название должности",
+        image: "/img/team/andreev.webp",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text Lorem Ipsum has been the industry's standard dummy text",
+      },
+      {
+        name: "Иванова Валерия",
+        role: "Название должности",
+        image: "/img/team/ivanova.webp",
+        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text Lorem Ipsum has been the industry's standard dummy text",
+      },
+    ],
+
+    docs: [
+      {
+        title: "Годовой отчет",
+        meta: "PDF (1.9 мб)",
+        fileUrl: "#",
+      },
+      {
+        title: "Отчет в Министерство Юстиций",
+        meta: "PDF (11.2 мб)",
+        fileUrl: "#",
+      },
+      {
+        title: "Аудиторское заключение",
+        meta: "PDF (4.4 мб)",
+        fileUrl: "#",
+      },
+      {
+        title: "Отчёт о полученных средствах",
+        meta: "PDF (7.9 мб)",
+        fileUrl: "#",
+      },
+    ],
+
     breadcrumbs: [
       {
         title: "Главная",

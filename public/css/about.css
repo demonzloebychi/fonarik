@@ -1,0 +1,105 @@
+/* Блок "О фонде" */
+.about {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-bg);
+  /* Горизонтальный градиент из макета Figma */
+  background-image: linear-gradient(
+    90deg,
+    rgba(225, 212, 86, 0.2) 0%,
+    rgba(233, 208, 78, 0.2) 14.35%,
+    rgba(255, 191, 55, 0.2) 37.69%,
+    rgba(223, 160, 85, 0.2) 61.81%,
+    rgba(154, 134, 148, 0.2) 80.36%,
+    rgba(118, 121, 181, 0.2) 100%
+  );
+  /* Плавные верхние/нижние и боковые отступы через clamp */
+  padding-top: clamp(60px, 10.6vw, 153px);
+  padding-bottom: clamp(60px, 8vw, 115px);
+  padding-left: clamp(15px, 8.3vw, 120px);
+  padding-right: clamp(15px, 8.3vw, 120px);
+}
+
+/* Декоративные фоновые элементы */
+.about__bg-decor {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  max-width: none;
+}
+
+/* Градиентное пятно слева */
+.about__bg-decor--left {
+  left: clamp(-210px, -15vw, -231px);
+  top: clamp(-155px, -10vw, -97px);
+  width: clamp(500px, 78vw, 1136px);
+  height: auto;
+  z-index: 0;
+  object-fit: contain;
+}
+
+/* Солнышко справа */
+.about__bg-decor--right {
+  right: 0;
+  top: clamp(0px, 0.3vw, 4px);
+  width: clamp(160px, 33.4vw, 481px);
+  height: auto;
+  z-index: 0;
+  object-fit: contain;
+}
+
+/* Контейнер контента */
+.about__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(22px, 3vw, 43px);
+}
+
+/* Плавный заголовок (от 36px на 360px до 64px на 1440px) */
+.about__title {
+  font-size: clamp(36px, 2.5rem + 1.94vw, 64px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-black);
+}
+
+/* Сетка/раскладка колонок */
+.about__content {
+  display: flex;
+  flex-wrap: wrap; /* Гарантия переноса на мобильных устройствах */
+  gap: clamp(22px, 2vw, 29px);
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Гибкие текстовые колонки без фиксации ширины */
+.about__column {
+  flex: 1 1 320px; /* Гибкое сжатие/растяжение от 320px */
+  max-width: 387px; /* Не дает колонке разрастаться шире макета на десктопе */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 1.6vw, 24px);
+  box-sizing: border-box;
+}
+
+/* Текст с гарантией читабельности и адаптивным кеглем */
+.about__text {
+  font-size: clamp(14px, 0.875rem + 0.14vw, 16px);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-black);
+  overflow-wrap: anywhere; /* Защита от вылезания длинных слов */
+}
+
+/* Медиа-запрос для правильного сброса ограничений на мобилках */
+@media (max-width: 820px) {
+  .about__column {
+    max-width: 100%;
+  }
+}

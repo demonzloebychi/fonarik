@@ -1,0 +1,41 @@
+<section class="team">
+  <div class="team__container">
+    <div class="team__header">
+      <h2 class="team__title">Команда</h2>
+      <div class="team__controls">
+        <button class="team__arrow team__arrow--prev" type="button" aria-label="Предыдущий слайд">
+          <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 13.5L1.5 7.5L7.5 1.5" stroke="var(--color-beige, #fcf7f4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="team__arrow team__arrow--next" type="button" aria-label="Следующий слайд">
+          <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.5 1.5L7.5 7.5L1.5 13.5" stroke="var(--color-beige, #fcf7f4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="swiper team__slider">
+      <div class="swiper-wrapper">
+        {% for member in teamMembers %}
+          <div class="swiper-slide team__card">
+            <div class="team__card-image-ibg">
+              <img src="{{ member.image }}" alt="{{ member.name }}">
+            </div>
+            <div class="team__card-body">
+              <div class="team__card-header">
+                <span class="team__card-role">{{ member.role }}</span>
+                <h3 class="team__card-name">{{ member.name }}</h3>
+              </div>
+              <p class="team__card-text">
+                {{ member.text }}
+              </p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+

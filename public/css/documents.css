@@ -1,0 +1,128 @@
+.docs {
+  background-color: #fff9e8;
+  padding-top: clamp(40px, 5.5vw, 80px);
+  padding-bottom: clamp(40px, 8.3vw, 120px);
+  padding-left: clamp(15px, 8.3vw, 120px);
+  padding-right: clamp(15px, 8.3vw, 120px);
+  overflow: hidden;
+}
+
+.docs__container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 2.1vw, 30px);
+  box-sizing: border-box;
+}
+
+.docs__title {
+  font-size: clamp(36px, 3.3vw, 48px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--color-black, #333333);
+  text-align: center;
+}
+
+.docs__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 10px 20px 30px 20px;
+  margin-top: -10px;
+  margin-bottom: -30px;
+  box-sizing: border-box;
+}
+
+.docs__card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  text-decoration: none;
+  box-shadow: 4px 4px 25px rgba(138, 138, 138, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+  min-height: 85px;
+}
+
+.docs__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 8px 30px rgba(138, 138, 138, 0.3);
+}
+
+.docs__card:active {
+  transform: translateY(0);
+}
+
+.docs__card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-right: 15px;
+}
+
+.docs__card-name {
+  font-size: clamp(16px, 1.25vw, 18px);
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--color-black, #333333);
+}
+
+.docs__card-meta {
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.5;
+  color: var(--color-black, #333333);
+  opacity: 0.6;
+}
+
+.docs__card-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  background-color: var(--color-red, #ed304d);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease;
+}
+
+.docs__card:hover .docs__card-btn {
+  opacity: 0.9;
+}
+
+.docs__card-btn svg {
+  width: 26px;
+  height: 26px;
+}
+
+@media (max-width: 768px) {
+  .docs__grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .docs__card {
+    padding: 10px 15px;
+    min-height: 69px;
+  }
+
+  .docs__card-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  .docs__card-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
