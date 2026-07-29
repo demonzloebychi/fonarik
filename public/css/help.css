@@ -66,10 +66,35 @@ color: var(--black);
   position: relative;
   /* Важно для одинаковой высоты карточек в слайдере */
   height: 100%;
+
+  overflow: visible !important;
+}
+.help-section__slider {
+    position: relative;
 }
 
+.help-section__slider-inner {
+    overflow: hidden;
+    border-radius: 24px; /* если нужен */
+}
 .help-section__slider .swiper-wrapper {
   align-items: stretch;
+}
+
+.child-card-button-prev,
+.child-card-button-next {
+    position: absolute;
+    top: calc(50% - 25px) !important;
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+.child-card-button-prev {
+    left: -12px !important;
+}
+
+.child-card-button-next {
+    right: -12px !important; 
 }
 
 /* ==========================================================================
@@ -225,6 +250,19 @@ color: var(--black);
 }
 
 
+.child-card-button-prev,
+.child-card-button-next {
+  border-radius: 15px !important;
+  background: var(--red) !important;
+  height: 46px !important;
+  width: 46px !important;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 @media (max-width: 991px) {
   .help-section {
     padding: 40px 0;
@@ -259,11 +297,6 @@ color: var(--black);
   .help-section__donation-form {
     order: 3;
     width: 100%;
-  }
-
-  .child-card__photo {
-    width: 150px;
-    height: 150px;
   }
 
   .help-section__more-btn--desktop {

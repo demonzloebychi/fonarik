@@ -104,17 +104,6 @@
   background-color: var(--purple);
   border-radius: 15px;
 }
-.child-card-button-prev,
-.child-card-button-next {
-  border-radius: 15px !important;
-  background: var(--red) !important;
-  height: 46px !important;
-  width: 46px !important;
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 /* Действия (кнопка + ссылка) */
 .child-card__actions {

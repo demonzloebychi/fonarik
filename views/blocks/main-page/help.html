@@ -73,14 +73,16 @@
       </div>
 
       <!-- Слайдер Swiper с карточками -->
-      <div class="help-section__slider swiper JS-help-slider">
-        <div class="swiper-wrapper">
-          {% for child in children %}
-          <div class="swiper-slide">
-            {% include "components/child-card.html" %}
+      <div class="help-section__slider ">
+        <div class="help-section__slider-inner swiper JS-help-slider">
+          <div class="swiper-wrapper">
+            {% for child in children %}
+            <div class="swiper-slide">
+              {% include "components/child-card.html" %}
+            </div>
+      
+            {% endfor %}
           </div>
-     
-          {% endfor %}
         </div>
 
         <!-- Навигационные стрелки (если нужны на мобилке или ПК) -->
