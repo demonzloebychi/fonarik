@@ -32,25 +32,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* padding-inline: clamp(26px, 3vw, 34px);
-    padding-block: clamp(28px, 3.5vw, 43px);
-    border-radius: 12px;
-    border: 1px solid #e8e8e8; */
+  transition: all 0.1s ease-in;
+
   img {
-    /* width: clamp(102px, 13vw, 153px); */
     max-width: 100%;
+  }
+}
+
+@media (hover: hover) {
+  .partners__item:hover {
+    scale: 1.05;
   }
 }
 
 @media (max-width: 768px) {
   .partners__item {
     width: 130px;
-
-
   }
 
   .partners__title {
     text-align: center;
   }
-
 }

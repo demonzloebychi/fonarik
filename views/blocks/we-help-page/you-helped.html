@@ -1,18 +1,20 @@
 <section class="needs-help">
   <div class="needs-help__container">
-    <h2 class="needs-help__title">Мы помогаем</h2>
+    <h2 class="needs-help__title">Вы помогли</h2>
 
-    <div class="needs-help__grid" id="we-help-container">
-      {% for child in commonData.children %} 
-        {% if loop.index0 < 3 %} 
-          {% include "components/child-card.html" %} 
-        {% endif %} 
+    <div class="needs-help__grid" id="user-helped-container">
+      {% set helpedCount = 0 %}
+      {% for child in commonData.children %}
+        {% if child.youHelped and helpedCount < 3 %}
+          {% include "components/child-card.html" %}
+          {% set helpedCount = helpedCount + 1 %}
+        {% endif %}
       {% endfor %}
     </div>
 
     <button type="button" class="needs-help__more-btn" data-load-more
-      data-target="we-help-container"
-      data-filter="all"
+      data-target="user-helped-container"
+      data-filter="user_helped"
       data-show-count="3"
     >
       <span>Показать еще</span>

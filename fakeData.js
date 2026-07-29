@@ -1,7 +1,5 @@
 module.exports = {
   index: {
-    title: "Главная",
-    showCatalogTitle: true,
     partners: [
       {
         name: "fonarik",
@@ -50,51 +48,6 @@ module.exports = {
       },
     ],
 
-    children: [
-      {
-        id: 1,
-        name: "Петров Сергей",
-        age: "12 лет",
-        image: "img/children/sergey.png",
-        diagnosis:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        targetAmount: "462 379 руб.",
-        progressPercent: 45,
-        url: "/stories/petrov-sergey",
-      },
-      {
-        id: 2,
-        name: "Миронова Евгения",
-        age: "12 лет",
-        image: "img/children/evgeniya.png",
-        diagnosis:
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        targetAmount: "462 379 руб.",
-        progressPercent: 30,
-        url: "/stories/mironova-evgeniya",
-      },
-      // {
-      //   id: 3,
-      //   name: "Иванов Алексей",
-      //   age: "8 лет",
-      //   image: "img/children/alexey.jpg",
-      //   diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      //   targetAmount: "120 000 руб.",
-      //   progressPercent: 70,
-      //   url: "/stories/ivanov-alexey"
-      // },
-      // {
-      //   id: 4,
-      //   name: "Смирнова Анна",
-      //   age: "5 лет",
-      //   image: "img/children/anna.jpg",
-      //   diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      //   targetAmount: "850 000 руб.",
-      //   progressPercent: 15,
-      //   url: "/stories/smirnova-anna"
-      // },
-    ],
-
     banners: [
       {
         name: "Совершенство каждой детали",
@@ -115,6 +68,13 @@ module.exports = {
           "Бескомпромиссное премиальное качество продукции для самых требовательных автомобилистов",
       },
     ],
+
+    quote: {
+      name: 'Ида Галич',
+      title: '«Иногда человеку нужен всего один фонарик, чтобы перестать бояться темноты»',
+      text: 'Любая помощь имеет значение. Иногда небольшой перевод, одно доброе сообщение или несколько минут внимания становятся для человека той самой поддержкой, которая помогает двигаться дальше'
+    },
+
 
     advantages: [
       {
@@ -299,7 +259,16 @@ module.exports = {
     ],
   },
 
+  
+
   about: {
+    quote: {
+      name: 'Ида Галич',
+      title: '«Иногда человеку нужен всего один фонарик, чтобы перестать бояться темноты»',
+      text: 'Мы не делим проблемы на большие и маленькие. То, что одному кажется мелочью, для другого может быть самым тяжёлым периодом в жизни. Поэтому для нас важен не масштаб проблемы, а человек, которому сейчас нужна поддержка'
+    },
+
+
     teamMembers: [
       {
         name: "Петров Алексей",
@@ -378,6 +347,11 @@ module.exports = {
         text: "Доставка товаров до потребителя. Собственные логистические мощности позволяют держать широкое наличие товаров и предоставлять востребованную продукцию здесь и сейчас. Официальное представительство обеспечивает бесперебойные поставки товаров, а также осуществлять пост продажное сопровождение потребителей.",
       },
     ],
+  },
+
+  weHelp: {
+  
+  
   },
 
   product: {

@@ -8,7 +8,7 @@ module.exports = {
     },
     {
       title: 'Нужна помощь',
-      url: '/we-help/',
+      url: '/weHelp/',
     },
     // {
     //   title: 'Качество',
@@ -49,7 +49,7 @@ module.exports = {
     },
     {
       title: 'Вы помогли',
-      url: '/we-help/',
+      url: '/weHelp/',
     },
     {
       title: 'Отчеты',
@@ -97,6 +97,145 @@ module.exports = {
     },
   ],
 
+
+  children: [
+      {
+        id: 1,
+        name: "Петров Сергей",
+        age: "12 лет",
+        image: "/img/children/sergey.png",
+        diagnosis:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "462 379 руб.",
+        progressPercent: 45,
+        url: "/stories/petrov-sergey",
+      },
+      {
+        id: 2,
+        name: "Миронова Евгения",
+        age: "12 лет",
+        image: "/img/children/evgeniya.png",
+        diagnosis:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "462 379 руб.",
+        progressPercent: 30,
+        url: "/stories/mironova-evgeniya",
+      },
+      {
+        id: 3,
+        name: "Максимов Константин",
+        age: "12 лет",
+        image: "/img/children/maksimov.png",
+        diagnosis: "Диагноз ребенка: Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "462 379 руб.",
+        progressPercent: 45,
+        url: "/stories/ivanov-alexey"
+      },
+      {
+        id: 4,
+        name: "Смирнова Анна",
+        age: "5 лет",
+        image: "/img/children/maksimov.png",
+        diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "850 000 руб.",
+        progressPercent: 15,
+        url: "/stories/smirnova-anna"
+      },
+      {
+        id: 5,
+        name: "Петров Сергей",
+        age: "12 лет",
+        image: "/img/children/sergey.png",
+        diagnosis:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "462 379 руб.",
+        progressPercent: 45,
+        url: "/stories/petrov-sergey",
+      },
+      {
+        id: 6,
+        name: "Миронова Евгения",
+        age: "12 лет",
+        image: "/img/children/evgeniya.png",
+        diagnosis:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "462 379 руб.",
+        progressPercent: 30,
+        url: "/stories/mironova-evgeniya",
+      },
+      {
+        id: 7,
+        name: "Иванов Алексей",
+        age: "8 лет",
+        image: "/img/children/evgeniya.png",
+        diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "120 000 руб.",
+        progressPercent: 70,
+        url: "/stories/ivanov-alexey"
+      },
+
+        {
+        id: 8,
+        name: "Петров Сергей",
+        age: "12 лет",
+        image: "/img/children/child1.png",
+        diagnosis:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "462 379 руб.",
+        progressPercent: 45,
+        url: "/stories/petrov-sergey",
+        youHelped: true,
+      },
+      {
+        id: 9,
+        name: "Миронова Евгения",
+        age: "12 лет",
+        image: "/img/children/child2.png",
+        diagnosis:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "462 379 руб.",
+        progressPercent: 30,
+        url: "/stories/mironova-evgeniya",
+        youHelped: true,
+
+      },
+      {
+        id: 10,
+        name: "Максимов Константин",
+        age: "12 лет",
+        image: "/img/children/child3.png",
+        diagnosis: "Диагноз ребенка: Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "462 379 руб.",
+        progressPercent: 45,
+        url: "/stories/ivanov-alexey",
+        youHelped: true,
+
+      },
+      {
+        id: 11,
+        name: "Смирнова Анна",
+        age: "5 лет",
+        image: "/img/children/child1.png",
+        diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "850 000 руб.",
+        progressPercent: 15,
+        url: "/stories/smirnova-anna",
+        youHelped: true,
+
+      },
+      {
+        id: 12,
+        name: "Максимов Константин",
+        age: "12 лет",
+        image: "/img/children/child3.png",
+        diagnosis: "Диагноз ребенка: Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        targetAmount: "462 379 руб.",
+        progressPercent: 45,
+        url: "/stories/ivanov-alexey",
+        youHelped: true,
+
+      },
+    ],
 
 
 
