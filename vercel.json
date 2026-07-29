@@ -5,7 +5,7 @@
     { "src": "public/**/*", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff2?|ttf|eot|txt))$", "dest": "/public/$1" },
+    { "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff2?|ttf|eot|txt|webp))$", "dest": "/public/$1" },
     { "src": "/(.*)", "dest": "/api/index.js" }
   ]
 }
