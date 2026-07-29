@@ -2,9 +2,10 @@ const initHelpSlider = () => {
   const sliderEl = document.querySelector(".JS-help-slider")
   if (!sliderEl) return
 
-  // Для этого слайдера стрелки, вероятно, внутри
-  const nextEl = sliderEl.querySelector(".swiper-button-next")
-  const prevEl = sliderEl.querySelector(".swiper-button-prev")
+  // Ищем обёртку, в которой лежат и слайдер, и кнопки
+  const wrapperEl = sliderEl.closest(".help-section__slider-wrapper") || document
+  const nextEl = wrapperEl.querySelector(".child-card-button-next")
+  const prevEl = wrapperEl.querySelector(".child-card-button-prev")
 
   new Swiper(sliderEl, {
     slidesPerView: 1,

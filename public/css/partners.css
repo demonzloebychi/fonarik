@@ -24,7 +24,8 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 55px 69px;
+  row-gap: clamp(15px, 3vw, 55px);
+  column-gap: clamp(21px, 4.5vw, 69px);
 }
 
 .partners__item {
@@ -44,5 +45,12 @@
 @media (max-width: 768px) {
   .partners__item {
     max-width: 130px;
+
+
   }
+
+  .partners__title {
+    text-align: center;
+  }
+
 }

@@ -61,6 +61,17 @@ module.exports = {
     },
   ],
 
+  navigationFooterAdvanced: [
+    {
+      title: 'Политика обработки персональных данных',
+      url: '/policy/'
+    },
+    {
+      title: 'Публичная оферта о заключении договора пожертвования',
+      url: '/ofetra/'
+    },
+  ],
+
   contacts: [
     {
         title: '+7 912 345 67 89',
@@ -86,71 +97,7 @@ module.exports = {
     },
   ],
 
-  productsList: [
-      {
-        img: 'product-in-list-output',
-        article: 'S08838L',
-        name: 'Рулевой наконечник',
-        brand: 'Volvo',
-        model: 'XC90',
-        year: '2002-2014 1st Gen',
-        codes: ['307608718', '30760213', '231465', '307608718'],
-      },
-      {
-        img: 'product-in-list-output',
-        article: 'S08838L',
-        name: 'Рулевой наконечник',
-        brand: 'Volvo',
-        model: 'XC90',
-        year: '2002-2014 1st Gen',
-        codes: ['307608718', '30760213', '231465', '307608718'],
-      },
-      {
-        img: 'product-in-list-output',
-        article: 'S08838L',
-        name: 'Рулевой наконечник',
-        brand: 'Volvo',
-        model: 'XC90',
-        year: '2002-2014 1st Gen',
-        codes: ['307608718', '30760213', '231465', '307608718'],
-      },
-      {
-        img: 'product-in-list-output',
-        article: 'S08838L',
-        name: 'Рулевой наконечник',
-        brand: 'Volvo',
-        model: 'XC90',
-        year: '2002-2014 1st Gen',
-        codes: ['307608718', '30760213', '231465', '307608718'],
-      },
-      {
-        img: 'product-in-list-output',
-        article: 'S08838L',
-        name: 'Рулевой наконечник',
-        brand: 'Volvo',
-        model: 'XC90',
-        year: '2002-2014 1st Gen',
-        codes: ['307608718', '30760213', '231465', '307608718'],
-      },
-      {
-        img: 'product-in-list-output',
-        article: 'S08838L',
-        name: 'Рулевой наконечник',
-        brand: 'Volvo',
-        model: 'XC90',
-        year: '2002-2014 1st Gen',
-        codes: ['307608718', '30760213', '231465', '307608718'],
-      },
-      {
-        img: 'product-in-list-output',
-        article: 'S08838L',
-        name: 'Рулевой наконечник',
-        brand: 'Volvo',
-        model: 'XC90',
-        year: '2002-2014 1st Gen',
-        codes: ['307608718', '30760213', '231465', '307608718'],
-      },
-  ],
+
 
 
 //   advantages: fakeData.index.advantages,
