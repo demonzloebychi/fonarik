@@ -50,7 +50,7 @@
   align-items: center;
   gap: 60px;
   padding-top: 20px;
-  margin-top: -135px;
+  margin-top: -50px;
 }
 
 .footer__socials {
@@ -61,6 +61,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.nav-menu__list--advanced {
+  max-width: 300px;
+  .nav-menu__link {
+    line-height: 120%;
+
+  }
+  
 }
 .footer__menu {
   max-width: 692px;
@@ -109,6 +118,7 @@
 }
 .only-desktop-footer {
   display: block;
+  margin-top: 60px;
 }
 @media (max-width: 768px) {
   .only-mobile-footer {
