@@ -44,7 +44,7 @@
 
 @media (max-width: 768px) {
   .partners__item {
-    max-width: 130px;
+    width: 130px;
 
 
   }
