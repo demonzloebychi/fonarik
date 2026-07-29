@@ -11,20 +11,19 @@
 /* Фиолетовая шапка с круглым аватором */
 .child-card__photo-wrapper {
   background: linear-gradient(180deg, #e4d8fd 0%, #cbb5f8 100%);
-  padding: 24px 20px;
+  /* padding: 24px 20px; */
   height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .child-card__photo {
-  padding: 17px;
-  /* width: 180px;
-  height: 180px; */
+  padding: clamp(15px, 1.6vw, 17px);
   border-radius: 50%;
-  object-fit: cover;
   display: block;
+  height: 100%;
 }
 
 /* Контентная часть карточки */
@@ -157,4 +156,5 @@
   .child-card__photo-wrapper {
     height: 255px;
   }
+
 }
