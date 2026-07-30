@@ -34,19 +34,15 @@
 .contacts-menu__list {
   display: flex;
   flex-direction: column;
+  gap: 7px;
 }
 
-.nav-menu__list {
-  gap: 15px;
-}
+
 .contacts-menu {
   display: flex;
   flex-direction: column;
 }
 
-.contacts-menu__list {
-  gap: 10px;
-}
 
 .nav-menu__sublist {
   display: flex;
