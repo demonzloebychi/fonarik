@@ -181,8 +181,8 @@ module.exports = {
         image: "/img/children/child1.png",
         diagnosis:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        targetAmount: "462 379 руб.",
-        progressPercent: 45,
+        targetAmount: "0 руб.",
+        progressPercent: 100,
         url: "/stories/petrov-sergey",
         youHelped: true,
       },
@@ -193,8 +193,8 @@ module.exports = {
         image: "/img/children/child2.png",
         diagnosis:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        targetAmount: "462 379 руб.",
-        progressPercent: 30,
+        targetAmount: "0 руб.",
+        progressPercent: 100,
         url: "/stories/mironova-evgeniya",
         youHelped: true,
 
@@ -205,8 +205,8 @@ module.exports = {
         age: "12 лет",
         image: "/img/children/child3.png",
         diagnosis: "Диагноз ребенка: Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        targetAmount: "462 379 руб.",
-        progressPercent: 45,
+        targetAmount: "0 руб.",
+        progressPercent: 100,
         url: "/stories/ivanov-alexey",
         youHelped: true,
 
@@ -217,8 +217,8 @@ module.exports = {
         age: "5 лет",
         image: "/img/children/child1.png",
         diagnosis: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        targetAmount: "850 000 руб.",
-        progressPercent: 15,
+        targetAmount: "0 руб.",
+        progressPercent: 100,
         url: "/stories/smirnova-anna",
         youHelped: true,
 
@@ -229,8 +229,8 @@ module.exports = {
         age: "12 лет",
         image: "/img/children/child3.png",
         diagnosis: "Диагноз ребенка: Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        targetAmount: "462 379 руб.",
-        progressPercent: 45,
+        targetAmount: "0 руб.",
+        progressPercent: 100,
         url: "/stories/ivanov-alexey",
         youHelped: true,
 

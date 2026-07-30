@@ -1,8 +1,19 @@
 .needs-help {
   background-color: var(--background);
   padding-block: clamp(3.75rem, 2.5rem + 3.125vw, 6.25rem);
+  position: relative;
 }
-
+.needs-help__background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+  img {
+    width: 100%;
+  }
+}
 .needs-help__container {
   width: 100%;
   max-width: 1240px;

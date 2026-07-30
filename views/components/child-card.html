@@ -30,7 +30,11 @@
 
     <div class="child-card__actions">
       <button type="button" class="child-card__btn">
-        <span>Помочь</span>
+        {% if child.progressPercent < 100 %}
+          <span>Помочь</span>
+        {% else %}
+          <span>СБОР ЗАКРЫТ</span> 
+        {% endif %}
         <svg
           width="9"
           height="10"
@@ -44,7 +48,9 @@
           />
         </svg>
       </button>
-      <a href="{{ child.url }}" class="child-card__link">Узнать историю</a>
+      <a href="{{ child.url }}" class="child-card__link">
+        Узнать историю
+      </a>
     </div>
   </div>
 </article>
