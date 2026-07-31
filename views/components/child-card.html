@@ -1,5 +1,8 @@
 <article class="child-card">
   <div class="child-card__photo-wrapper">
+    <div class="child-card__photo-wrapper-background">
+      <img src="/img/child-card-image-background.png" aria-hidden="true">
+    </div>
     <img
       src="{{ child.image }}"
       alt="{{ child.name }}"
@@ -32,10 +35,7 @@
       <button type="button" class="child-card__btn">
         {% if child.progressPercent < 100 %}
           <span>Помочь</span>
-        {% else %}
-          <span>СБОР ЗАКРЫТ</span> 
-        {% endif %}
-        <svg
+          <svg
           width="9"
           height="10"
           viewBox="0 0 9 10"
@@ -47,6 +47,9 @@
             fill="white"
           />
         </svg>
+        {% else %}
+          <span>СБОР ЗАКРЫТ</span> 
+        {% endif %}
       </button>
       <a href="{{ child.url }}" class="child-card__link">
         Узнать историю

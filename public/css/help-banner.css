@@ -34,7 +34,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.85;
+  /* background: rgba(231, 208, 80, 0.6); */
+  /* opacity: 0.85; */
 }
 
 .help-banner__content {
@@ -173,5 +174,9 @@
   .help-banner__card--right {
     right: 0;
     top: 50px;
+  }
+
+  .help-banner__gradient-bg  {
+    object-position: 80% 20%;
   }
 }
