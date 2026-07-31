@@ -12,6 +12,7 @@ const upload = multer();
 const viewsPath = path.join(__dirname, 'views');
 const fakeData = require('./fakeData');
 const commonData = require('./commonData');
+const { version } = require('os');
 
 // 1. Настройка Nunjucks
 const env = nunjucks.configure(viewsPath, {
@@ -27,10 +28,30 @@ app.set('views', viewsPath);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const cssDir = path.join(__dirname, 'public', 'css');
+let cssFiles = [];
+
+try {
+  const files = fs.readdirSync(cssDir).filter(file => path.extname(file) === '.css');
+  cssFiles = files.map(file => {
+    const filePath = path.join(cssDir, file);
+    const stats = fs.statSync(filePath); 
+    
+    return {
+      name: file,
+      version: stats.mtimeMs 
+    };
+  });
+} catch (err) {
+  console.error('Не удалось прочитать папку public/css:', err.message);
+}
+
 app.use((req, res, next) => {
   res.locals.commonData = commonData;
+  res.locals.cssFiles = cssFiles;
   next();
 });
+
 
 // 3. API Маршруты
 

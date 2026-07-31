@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Базовый заголовок{% endblock %}</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
+    {% for file in cssFiles %}
+        <link rel="stylesheet" href="/css/{{ file.name }}?v={{ file.version }}">
+    {% endfor %}
+
     <link rel="stylesheet" href="/libs/swiper/swiper.min.css">
     <script src="/libs/swiper/swiper.min.js"></script>
 
