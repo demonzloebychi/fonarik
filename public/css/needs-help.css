@@ -14,6 +14,18 @@
     width: 100%;
   }
 }
+
+.you-helped__background {
+  position: absolute;
+  bottom: -55px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: -1;
+  img {
+    width: 100%;
+  }
+}
 .needs-help__container {
   width: 100%;
   max-width: 1240px;
@@ -23,16 +35,6 @@
   flex-direction: column;
   align-items: center;
   gap: clamp(1.875rem, 1.25rem + 1.563vw, 3.125rem);
-}
-
-.needs-help__title {
-  width: 100%;
-  font-family: 'TikTok Sans', sans-serif;
-  font-size: clamp(2.25rem, 1.875rem + 0.938vw, 3rem);
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--black);
-  text-align: left;
 }
 
 @media (max-width: 768px) {

@@ -141,3 +141,15 @@ button,
     width: 59px !important;
   }
 }
+
+
+.h2__title {
+  width: 100%;
+  font-family: 'TikTok Sans', sans-serif;
+  font-size: clamp(2.25rem, 1.875rem + 0.938vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--black);
+  text-align: left;
+  text-transform: uppercase;
+}

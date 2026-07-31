@@ -10,22 +10,9 @@ module.exports = {
       title: 'Нужна помощь',
       url: '/weHelp/',
     },
-    // {
-    //   title: 'Качество',
-    //   childrens: [
-    //     {
-    //       title: 'Политика Качества',
-    //       url: '/policy',
-    //     },
-    //     {
-    //       title: 'Гарантия Качества',
-    //       url: '/quality',
-    //     },
-    //   ]
-    // },
     {
       title: 'Вы помогли',
-      url: '/we-help/',
+      url: '/youHelped/',
     },
     {
       title: 'Отчеты',
@@ -45,11 +32,11 @@ module.exports = {
     },
     {
       title: 'Нужна помощь',
-      url: '/need-help/',
+      url: '/weHelp/',
     },
     {
       title: 'Вы помогли',
-      url: '/weHelp/',
+      url: '/youHelped/',
     },
     {
       title: 'Отчеты',
@@ -244,5 +231,4 @@ module.exports = {
 //   catalog: fakeData.index.catalog,
 
 
-  // Добавьте другие общие блоки, если нужно
 };
