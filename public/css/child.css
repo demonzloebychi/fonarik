@@ -41,6 +41,7 @@
 
 /* Контентная часть карточки */
 .child-card__content {
+  margin-top: 19px;
   padding: 24px 20px;
   display: flex;
   flex-direction: column;

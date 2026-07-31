@@ -104,14 +104,14 @@ color: var(--black);
 .donation-form {
   background-color: #f13550;
   border-radius: 24px;
-  padding: 32px 24px;
+  padding: 28px 24px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
 }
 
 .donation-form__title {
-  margin-bottom: clamp(25px, 3.5vw, 52px);
+  margin-bottom: clamp(25px, 3vw, 36px);
   text-align: center;
 
   color: var(--white);
@@ -125,7 +125,7 @@ color: var(--black);
 .donation-form__body {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   flex: 1;
 }
 
