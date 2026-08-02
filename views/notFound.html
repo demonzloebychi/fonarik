@@ -1,0 +1,34 @@
+{% extends "blocks/layout.html" %}
+
+{% block title %}404{% endblock %}
+
+
+
+{% block content %}
+
+<section class="not-found">
+  <img 
+    src="{{ bgImage }}" 
+    alt="" 
+    class="not-found__bg" 
+    aria-hidden="true"
+  >
+
+  <div class="not-found__container">
+    <div class="not-found__graphics">
+      <img 
+        src="{{ graphicsImage }}" 
+        alt="{{ graphicsAlt }}" 
+        class="not-found__img"
+      >
+    </div>
+
+    <h1 class="not-found__title">{{ title }}</h1>
+
+    <a href="{{ buttonUrl }}" class="not-found__btn">
+      {{ buttonText }}
+    </a>
+  </div>
+</section>
+
+{% endblock %}

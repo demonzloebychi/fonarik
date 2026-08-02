@@ -259,7 +259,14 @@ module.exports = {
     ],
   },
 
-  
+  notFound: {
+    title: "Такой страницы не найдено :(",
+    buttonText: "Вернуться на главную",
+    buttonUrl: "/",
+    bgImage: "/img/not-found/gradients-404.png",
+    graphicsImage: "/img/not-found/404.svg",
+    graphicsAlt: "404 - Страница не найдена"
+  },
 
   about: {
     quote: {

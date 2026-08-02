@@ -1,0 +1,99 @@
+/* Базовый класс для скрытия модалки */
+.cookie-modal.hidden {
+  display: none !important;
+}
+
+/* Десктопная версия (Figma: 902px x 104px) */
+.cookie-modal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: clamp(20px, 3vw, 55px);
+  
+  width: calc(100% - 30px );
+  max-width: 902px;
+  box-sizing: border-box;
+  padding-block: clamp(15px, 2vw, 25px);
+  padding-inline: clamp(15px, 2.3vw, 30px);
+
+  background-color: var(--white);
+  border: 1px solid var(--red);
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+
+  position: fixed;
+  bottom: 20px;
+  /* left: 50%;
+  transform: translateX(-50%); */
+  right: clamp(15px, 3vw, 44px);
+  z-index: 9999;
+}
+
+/* Текст (Десктоп) */
+.cookie-text {
+  margin: 0;
+  max-width: 657px;
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 400; /* Regular */
+  line-height: 1.1; /* 110% */
+  color: #000000;
+  text-align: left;
+}
+
+/* Ссылка на политику */
+.cookie-text a {
+  color: var(--red);
+  text-decoration: underline;
+}
+
+/* Кнопка (Десктоп) */
+.cookie-modal .button.red-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  
+  width: 130px;
+  height: 41px;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  
+  background-color: var(--red); /* Сконвертировано из Figma RGB */
+  color: var(--white);
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 600; /* SemiBold */
+  line-height: 1.1;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.cookie-modal .button.red-button:hover {
+  opacity: 0.9;
+}
+
+/* Мобильная версия (Figma: до 330px включительно) */
+@media (max-width: 768px) {
+  .cookie-modal {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;    
+  }
+
+  .cookie-text {
+    max-width: 300px;
+    font-size: 12px;
+  }
+
+  .cookie-modal .button.red-button {
+    width: 125px;
+    height: 39px;
+    font-size: 14px;
+  }
+}
