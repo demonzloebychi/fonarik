@@ -87,6 +87,42 @@ app.get('/api/children', (req, res) => {
   }
 });
 
+app.get('/api/docs', (req, res) => {
+  // Получаем лимит из запроса (например, при первом клике прилетит 8, потом 12 и т.д.)
+  const limit = parseInt(req.query.limit, 10) || 4;
+  const type = req.query.type || 'docs';
+
+  let baseArray = [];
+  if (type === 'reports') {
+    baseArray = (commonData && commonData.reports) || [];
+  } else {
+    baseArray = (commonData && commonData.docs) || [];
+  }
+
+  // Нарезаем строго от 0 до текущего требуемого лимита
+  const slicedItems = baseArray.slice(0, limit);
+  let htmlResult = '';
+
+  try {
+    slicedItems.forEach(item => {
+      htmlResult += env.render('components/doc-card.html', {
+        item,
+        commonData
+      });
+    });
+
+    res.json({
+      html: htmlResult,
+      // true если в базе осталось еще что-то, что не вошло в текущую нарезку
+      hasMore: slicedItems.length < baseArray.length
+    });
+  } catch (error) {
+    console.error('Ошибка Nunjucks при AJAX-рендере документов:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
+
+
 // Отправка в Telegram
 app.post('/api/call', upload.single('file'), async (req, res) => {
   const { name, phone, comment, email } = req.body;

@@ -104,6 +104,22 @@
   height: 26px;
 }
 
+.docs__load-more {
+  border-radius: 100px;
+  padding: 10px 13px;
+  width: 100%;
+  background: var(--red);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 20px;
+  gap: 8px;
+}
+
 @media (max-width: 768px) {
   .docs__grid {
     grid-template-columns: 1fr;

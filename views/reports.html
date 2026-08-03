@@ -1,0 +1,23 @@
+{% extends "blocks/layout.html" %}
+
+{% block title %}Отчеты{% endblock %}
+
+
+{% import "blocks/reusable/hero.html" as ui %}
+{% from "blocks/about-page/documents.html" import documentsBlock %}
+
+
+{% block content %}
+
+    {{ ui.hero({
+    title: "Благотворительность должна быть открытой и понятной.",
+    description: "На этой странице вы можете увидеть детальные отчёты о нашей работе: какие средства поступили, на что они были направлены и каких результатов удалось достичь. Для нас важно, чтобы работа фонда была максимально прозрачной."
+    }) }}
+
+    {% include "blocks/main-page/stats-banner.html" %} 
+    
+    {{ documentsBlock("Документы", commonData.docs, initialCount=8, step=4, type="docs") }}
+    {{ documentsBlock("Отчеты", commonData.reports, initialCount=12, step=4, type="reports") }}
+
+
+{% endblock %}

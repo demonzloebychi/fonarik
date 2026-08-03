@@ -1,0 +1,19 @@
+{% macro hero(params) %}
+<section class="page-hero{% if params.class %} {{ params.class }}{% endif %}">
+  <img src="/img/reports/gradients-reports.png" alt="" class="page-hero__bg" aria-hidden="true">
+  <img src="/img/children/sun.svg" alt="" class="page-hero__sun" aria-hidden="true">
+
+  <div class="page-hero__container">
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">
+        {{ params.title }}
+      </h1>
+      {% if params.description %}
+        <p class="page-hero__description">
+          {{ params.description }}
+        </p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endmacro %}

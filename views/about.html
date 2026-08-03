@@ -1,13 +1,15 @@
 {% extends "blocks/layout.html" %}
 
-{% block title %}Страница о нас{% endblock %}
+{% block title %}О нас{% endblock %}
 
+{% from "blocks/about-page/documents.html" import documentsBlock %}
 
 
 {% block content %}
     {% include "blocks/main-page/quote.html" %} 
     {% include "blocks/about-page/about.html" %} 
     {% include "blocks/about-page/team.html" %} 
-    {% include "blocks/about-page/documents.html" %} 
+    <!-- {% include "blocks/about-page/documents.html" %}  -->
+    {{ documentsBlock("Документы", commonData.docs, initialCount=4, showMore=false, type="docs") }}
 
 {% endblock %}

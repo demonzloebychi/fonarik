@@ -25,14 +25,27 @@
   margin-bottom: 32px;
   gap: 7px;
 }
-
+.help-section__header-compact {
+  margin-bottom: 30px;
+  flex-direction: row;
+  justify-content: space-between;
+  > .help-section__title {
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 600;
+    line-height: 110%;
+    @media (max-width: 768px) {
+      font-weight: 700;
+    }
+  }
+}
 .help-section__title {
   font-size: clamp(36px, 4vw, 64px);
   font-family: var(--font-family);
-font-weight: 700;
-line-height: 70%;
-text-align: center;
-color: var(--black);
+  font-weight: 700;
+  line-height: 70%;
+  text-align: center;
+  color: var(--black);
+  text-transform: uppercase;
 }
 .help-section__more-btn {
   align-self: end;
@@ -70,12 +83,12 @@ color: var(--black);
   overflow: visible !important;
 }
 .help-section__slider {
-    position: relative;
+  position: relative;
 }
 
 .help-section__slider-inner {
-    overflow: hidden;
-    border-radius: 24px; /* если нужен */
+  overflow: hidden;
+  border-radius: 24px; /* если нужен */
 }
 .help-section__slider .swiper-wrapper {
   align-items: stretch;
@@ -83,18 +96,18 @@ color: var(--black);
 
 .child-card-button-prev,
 .child-card-button-next {
-    position: absolute;
-    top: calc(50% - 25px) !important;
-    transform: translateY(-50%);
-    z-index: 20;
+  position: absolute;
+  top: calc(50% - 25px) !important;
+  transform: translateY(-50%);
+  z-index: 20;
 }
 
 .child-card-button-prev {
-    left: -12px !important;
+  left: -12px !important;
 }
 
 .child-card-button-next {
-    right: -12px !important; 
+  right: -12px !important;
 }
 
 /* ==========================================================================
@@ -249,7 +262,6 @@ color: var(--black);
   color: #fff;
 }
 
-
 .child-card-button-prev,
 .child-card-button-next {
   border-radius: 15px !important;
@@ -285,8 +297,11 @@ color: var(--black);
   border-radius: 6px;
   background-color: transparent;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+
   /* Фоновая галочка (скрыта по умолчанию) */
   background-position: center;
   background-repeat: no-repeat;
@@ -324,13 +339,10 @@ color: var(--black);
   color: var(--yellow-light);
 }
 
-
-
 @media (max-width: 991px) {
   .help-section {
     padding: 60px 0;
   }
-
 
   .donation-form__subtitle {
     text-align: center;
@@ -355,8 +367,8 @@ color: var(--black);
   .help-section__more-btn {
     order: 2;
     align-self: center;
-            width: fit-content;
-        margin: 0 auto;
+    width: fit-content;
+    margin: 0 auto;
   }
 
   .help-section__donation-form {

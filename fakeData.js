@@ -309,28 +309,7 @@ module.exports = {
       },
     ],
 
-    docs: [
-      {
-        title: "Годовой отчет",
-        meta: "PDF (1.9 мб)",
-        fileUrl: "#",
-      },
-      {
-        title: "Отчет в Министерство Юстиций",
-        meta: "PDF (11.2 мб)",
-        fileUrl: "#",
-      },
-      {
-        title: "Аудиторское заключение",
-        meta: "PDF (4.4 мб)",
-        fileUrl: "#",
-      },
-      {
-        title: "Отчёт о полученных средствах",
-        meta: "PDF (7.9 мб)",
-        fileUrl: "#",
-      },
-    ],
+    
 
     breadcrumbs: [
       {
