@@ -141,6 +141,22 @@ Email: ${email || 'Не указан'}
 });
 
 // 4. Динамические страницы (Синхронный `readdirSync` надежнее при билде Vercel)
+// try {
+//   const files = fs.readdirSync(viewsPath);
+//   files.forEach((file) => {
+//     if (path.extname(file) === '.html') {
+//       const name = path.basename(file, '.html');
+//       const route = file === 'index.html' ? '/' : '/' + name;
+      
+//       app.get(route, (req, res) => {
+//         const pageData = fakeData[name] || {};
+//         res.render(file, pageData);
+//       });
+//     }
+//   });
+// } catch (err) {
+//   console.error('Не удалось прочитать папку views:', err);
+// }
 try {
   const files = fs.readdirSync(viewsPath);
   files.forEach((file) => {
@@ -150,12 +166,21 @@ try {
       
       app.get(route, (req, res) => {
         const pageData = fakeData[name] || {};
-        res.render(file, pageData);
+        
+        // Добавляем колбэк для перехвата синтаксических ошибок Nunjucks
+        res.render(file, pageData, (err, html) => {
+          if (err) {
+            console.error(`[Nunjucks Error] Ошибка рендера страницы ${file}:`, err);
+            return res.status(500).send(`Nunjucks Error: ${err.message}`);
+          }
+          res.send(html);
+        });
       });
     }
   });
 } catch (err) {
   console.error('Не удалось прочитать папку views:', err);
 }
+
 
 module.exports = app;

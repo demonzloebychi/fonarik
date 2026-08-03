@@ -1,0 +1,64 @@
+<div class="hero-form">
+  <h2 class="hero-form__title">ПОМОЧЬ</h2>
+
+  <form action="#" class="hero-form__body">
+    <div class="hero-form__type-toggle">
+      <label class="hero-form__type-label">
+        <input
+          type="radio"
+          name="payment_type"
+          value="monthly"
+          class="hero-form__type-input"
+          checked
+        />
+        <span class="hero-form__type-btn">Ежемесячно</span>
+      </label>
+
+      <label class="hero-form__type-label">
+        <input
+          type="radio"
+          name="payment_type"
+          value="once"
+          class="hero-form__type-input"
+        />
+        <span class="hero-form__type-btn">Разово</span>
+      </label>
+    </div>
+
+    <div class="hero-form__field">
+      <input
+        type="text"
+        placeholder="Введите сумму"
+        class="hero-form__input"
+        aria-label="Введите сумму"
+      />
+    </div>
+
+    <div class="hero-form__contacts">
+      <span class="hero-form__subtitle">Контактные данные</span>
+      <input
+        type="text"
+        placeholder="Ваше имя"
+        class="hero-form__input"
+        aria-label="Ваше имя"
+      />
+      <input
+        type="email"
+        placeholder="E-mail"
+        class="hero-form__input"
+        aria-label="E-mail"
+      />
+      <input
+        type="tel"
+        placeholder="Телефон"
+        class="hero-form__input"
+        aria-label="Телефон"
+      />
+    </div>
+
+    <button type="submit" class="hero-form__submit-btn">
+      ПОЖЕРТВОВАТЬ
+    </button>
+    <a href="/other-ways" class="hero-form__link">Другие способы</a>
+  </form>
+</div>

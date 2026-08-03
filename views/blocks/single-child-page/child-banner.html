@@ -1,0 +1,40 @@
+{% set child = commonData.children[12] %}
+
+<section class="child-banner">
+  <div class="child-banner__media">
+    <img 
+      src="{{ child.mainImage }}" 
+      alt="{{ child.name }}" 
+      class="child-banner__bg"
+    >
+    {% if child %}
+    <div class="child-banner__card child-card">
+      <div class="child-card__content">
+        <div class="child-card__header">
+          <h3 class="child-card__name">{{ child.name }}</h3>
+          <span class="child-card__age">{{ child.age }}</span>
+        </div>
+
+        <p class="child-card__diagnosis">Диагноз ребенка: {{ child.diagnosis }}</p>
+
+        <div class="child-card__progress">
+          <div class="child-card__progress-info">
+            <span class="child-card__name-amount">Осталось собрать</span>
+            <strong class="child-card__amount">{{ child.targetAmount }}</strong>
+          </div>
+          <div class="child-card__bar">
+            <div 
+              class="child-card__bar-fill" 
+              style="width: {{ child.progressPercent }}%;"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="child-banner__form-wrapper">
+    {% include "components/form.html" %}
+  </div>
+</section>

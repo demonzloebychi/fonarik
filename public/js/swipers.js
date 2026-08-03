@@ -47,7 +47,34 @@ const initTeamSlider = () => {
   })
 }
 
+const initChildrenHelpSlider = () => {
+  const sliderEl = document.querySelector(".JS-children-help-slider")
+  if (!sliderEl) return
+
+  // Ищем обёртку, в которой лежат и слайдер, и кнопки
+  const wrapperEl = sliderEl.closest(".help-section__slider-wrapper") || document
+  const nextEl = wrapperEl.querySelector(".child-card-button-next")
+  const prevEl = wrapperEl.querySelector(".child-card-button-prev")
+
+  new Swiper(sliderEl, {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    navigation: { nextEl, prevEl },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  })
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initHelpSlider()
   initTeamSlider()
+  initChildrenHelpSlider()
 })

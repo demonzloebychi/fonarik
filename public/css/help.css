@@ -355,6 +355,8 @@ color: var(--black);
   .help-section__more-btn {
     order: 2;
     align-self: center;
+            width: fit-content;
+        margin: 0 auto;
   }
 
   .help-section__donation-form {

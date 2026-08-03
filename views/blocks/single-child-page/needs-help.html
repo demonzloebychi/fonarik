@@ -1,0 +1,66 @@
+<section class="help-section">
+  <div class="help-section__container">
+    <!-- Шапка: заголовок и кнопка -->
+    <div class="help-section__header">
+      <h2 class="help-section__title">МЫ ПОМОГАЕМ</h2>
+      <a
+        href="/stories"
+        class="help-section__more-btn help-section__more-btn--desktop"
+        >ВСЕ ИСТОРИИ</a
+      >
+    </div>
+
+    <!-- Основной контент: форма + слайдер -->
+    <div class="help-section__flex">
+      
+
+      <!-- Слайдер Swiper с карточками -->
+      <div class="help-section__slider">
+        <div class="help-section__slider-inner swiper JS-children-help-slider">
+          <div class="swiper-wrapper">
+            {% for child in commonData.children %} {% if loop.index0 < 3 %}
+            <div class="swiper-slide">
+              {% include "components/child-card.html" %}
+            </div>
+            {% endif %} {% endfor %}
+          </div>
+        </div>
+
+        <!-- Навигационные стрелки (если нужны на мобилке или ПК) -->
+        <div class="swiper-button-prev child-card-button-prev">
+          <svg
+            width="9"
+            height="15"
+            viewBox="0 0 9 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9 13.2375L3.43725 7.5L9 1.7625L7.28745 0L0 7.5L7.28745 15L9 13.2375Z"
+              fill="#FCF7F4"
+            />
+          </svg>
+        </div>
+        <div class="swiper-button-next child-card-button-next">
+          <svg
+            width="9"
+            height="15"
+            viewBox="0 0 9 15"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 13.2375L5.56275 7.5L0 1.7625L1.71255 0L9 7.5L1.71255 15L0 13.2375Z"
+              fill="#FCF7F4"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
+    <a
+        href="/stories"
+        class="help-section__more-btn help-section__more-btn--mobile"
+        >ВСЕ ИСТОРИИ</a
+      >
+  </div>
+</section>

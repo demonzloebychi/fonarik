@@ -39,6 +39,10 @@
   height: 100%;
   position: relative;
   z-index: 2;
+  max-width: 300px;
+    object-fit: cover;
+    max-height: 300px;
+    aspect-ratio: 1;
 }
 
 /* Контентная часть карточки */

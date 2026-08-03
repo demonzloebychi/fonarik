@@ -1,0 +1,92 @@
+.child-banner {
+  display: flex;
+  width: 100%;
+  max-width: 100%; /* Заменяем 1440px на 100%, чтобы тянулся на весь экран */
+  margin: 0 auto;
+  min-height: 600px;
+  box-sizing: border-box;
+}
+
+.child-banner__media {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.child-banner__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.child-banner__card.child-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 387px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.child-banner__card .child-card__content {
+  margin-top: 0;
+  padding: 20px;
+}
+
+.child-banner__card .child-card__progress {
+  margin-bottom: 0;
+}
+
+.child-banner__form-wrapper {
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* Мобильный адаптив */
+@media (max-width: 991px) {
+  .child-banner {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .child-banner__media {
+    flex-direction: column;
+    padding: 0;
+    align-items: stretch;
+    justify-content: flex-start;
+  }
+
+  .child-banner__bg {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .child-banner__card.child-card {
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .child-banner__card .child-card__content {
+    padding: 20px 15px;
+  }
+
+  .child-banner__form-wrapper {
+    max-width: 100%;
+  }
+}
