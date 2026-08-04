@@ -1,0 +1,28 @@
+{% macro newsSingle(item) %}
+<section class="news-detail">
+  <div class="container">
+    <div class="news-detail__container">
+      <aside class="news-detail__sidebar">
+        <div class="article-meta">
+          <div class="article-meta__item">
+            <span class="article-meta__label">Дата публикации</span>
+            <time class="article-meta__value" datetime="{{ item.datetime }}">{{ item.date }}</time>
+          </div>
+          {% if item.topic %}
+          <div class="article-meta__item">
+            <span class="article-meta__label">Тема статьи</span>
+            <span class="article-meta__value">{{ item.topic }}</span>
+          </div>
+          {% endif %}
+        </div>
+      </aside>
+
+      <article class="news-detail__content article-content">
+        <div class="article-content__body">
+          {{ item.htmlContent | safe }}
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+{% endmacro %}

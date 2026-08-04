@@ -1,3 +1,7 @@
+.general-banner-container {
+  background: var(--background);
+}
+
 .general-banner {
   display: flex;
   width: 100%;

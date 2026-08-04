@@ -9,6 +9,23 @@
   }
 }
 
+.page-news-hero {
+    padding-top: 136px;
+    padding-bottom: clamp(60px, 9vw, 136px);
+    @media (max-width: 768px) {
+        padding-top: 140px;
+    }
+}
+
+.page-single-news-hero {
+    padding-top: 55px;
+    padding-bottom: 55px;
+    @media (max-width: 768px) {
+        padding-top: 140px;
+        padding-bottom: 60px;
+    }
+}
+
 .page-hero__bg {
   position: absolute;
   inset: 0;

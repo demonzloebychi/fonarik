@@ -1,0 +1,23 @@
+{% extends "blocks/layout.html" %}
+
+{% block title %}Новость{% endblock %}
+
+
+{% import "blocks/reusable/hero.html" as ui %}
+{% import "blocks/news-page/news-single.html" as newsPage %}
+
+
+{% block content %}
+
+    {{ ui.hero({
+    title: commonData.newsData[0].title,
+    class: 'page-single-news-hero'
+    }) }}
+
+
+    {{ newsPage.newsSingle(commonData.newsData[0]) }}
+
+
+
+
+{% endblock %}

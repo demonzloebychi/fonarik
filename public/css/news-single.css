@@ -1,0 +1,233 @@
+.news-detail {
+  width: 100%;
+  background: var(--background);
+  padding-block: clamp(40px, 5vw, 60px);
+}
+
+.news-detail__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(30px, 4vw, 40px);
+}
+
+@media (min-width: 992px) {
+  .news-detail__container {
+    grid-template-columns: clamp(240px, 30vw, 400px) 1fr;
+  }
+}
+
+.news-detail__sidebar {
+  width: 100%;
+}
+
+/* Фиксация с учетом высоты шапки */
+.article-meta {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: sticky;
+  top: calc(var(--header-total-height, 0px) + 20px);
+}
+
+.article-meta__item {
+  display: flex;
+  flex-direction: column;
+  padding-block: clamp(10px, 1.5vw, 20px);
+  border-top: 1px solid rgba(160, 160, 160, 0.4);
+}
+
+.article-meta__item:last-child {
+  border-bottom: 1px solid rgba(160, 160, 160, 0.4);
+}
+
+.article-meta__label {
+  font-weight: 700;
+  font-size: clamp(16px, 1.2vw, 18px);
+  line-height: 1.5;
+  color: var(--red);
+  opacity: 0.8;
+}
+
+.article-meta__value {
+  font-weight: 700;
+  font-size: clamp(20px, 1.8vw, 24px);
+  line-height: 1.5;
+  color: var(--black);
+  opacity: 0.8;
+}
+
+/* Контент статьи */
+.article-content,
+.article-content__body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.article-content h2,
+.article-content h3,
+.article-content h4 {
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--black);
+  margin: 0;
+}
+
+.article-content h2 {
+  font-size: clamp(28px, 3.5vw, 36px);
+}
+
+.article-content h3 {
+  font-size: clamp(24px, 2.8vw, 28px);
+}
+
+.article-content h4 {
+  font-size: clamp(20px, 2.2vw, 24px);
+}
+
+.article-content p {
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.5;
+  color: var(--black);
+  margin: 0;
+}
+
+.article-content ul,
+.article-content ol {
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.5;
+  color: var(--black);
+  margin: 0;
+  padding: 0; /* padding убираем, так как отступ задается через li */
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 12px);
+  list-style: none; /* убираем стандартные маркеры браузера */
+}
+
+.article-content ul li {
+  position: relative;
+  margin: 0;
+  padding-left: clamp(16px, 1.5vw, 24px); /* отступ текста от маркера */
+}
+
+/* Маркер-точка для ul */
+.article-content ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--black); /* или var(--red), если маркер должен быть красным */
+  font-weight: 700;
+  line-height: inherit;
+}
+
+
+.article-content ol {
+  counter-reset: custom-counter;
+}
+
+.article-content ol li {
+  position: relative;
+  margin: 0;
+  padding-left: clamp(20px, 2vw, 28px);
+  counter-increment: custom-counter;
+}
+
+.article-content ol li::before {
+  content: counter(custom-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--black);
+  font-weight: 700;
+  line-height: inherit;
+}
+
+.article-content img {
+  width: 100%;
+  aspect-ratio: 760 / 424;
+  object-fit: cover;
+  display: block;
+}
+
+/* 1. Видео-обертка и белая кнопка с красным треугольником */
+.article-content .video-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+.article-content .video-wrapper a,
+.article-content .video-wrapper button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(56px, 7vw, 92px);
+  height: clamp(56px, 7vw, 92px);
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+}
+
+.article-content .video-wrapper a::after,
+.article-content .video-wrapper button::after {
+  content: "";
+  display: block;
+  width: clamp(20px, 2.5vw, 34px);
+  height: clamp(22px, 2.7vw, 37px);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34 37" fill="none"><path d="M30.5259 22.6623C33.8523 20.7365 33.8523 15.9339 30.5259 14.0081L7.50517 0.680305C4.17184 -1.24952 0 1.15578 0 5.00744V31.663C0 35.5146 4.17185 37.9199 7.50518 35.9901L30.5259 22.6623Z" fill="%23ED314D"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 3px; /* Оптическое смещение иконки play по центру */
+}
+
+.article-content .video-wrapper a:hover,
+.article-content .video-wrapper button:hover {
+  transform: translate(-50%, -50%) scale(1.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* 2. Кнопка "Помочь" (.button-help) внутри контента */
+.article-content .button-help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: clamp(44px, 4.5vw, 52px);
+  background-color: var(--red, #ED314D);
+  color: #ffffff;
+  border-radius: 100px;
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.article-content .button-help:hover {
+  opacity: 0.9;
+}
+
+.article-content .button-help::after {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 10px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 10" fill="none"><path d="M8.99998 4.04623V5.95377C8.99997 6.02276 8.9753 6.08891 8.9314 6.13769C8.8875 6.18647 8.82795 6.21388 8.76587 6.21389H5.5925V9.73985C5.59251 9.77401 5.58646 9.80784 5.57469 9.83941C5.56293 9.87097 5.54569 9.89965 5.52395 9.9238C5.50221 9.94796 5.4764 9.96712 5.44799 9.98019C5.41958 9.99326 5.38914 9.99998 5.35839 9.99997H3.64161C3.51245 9.99997 3.4075 9.88362 3.4075 9.73985V6.21389H0.234108C0.172021 6.21388 0.112479 6.18647 0.0685762 6.13769C0.0246739 6.08891 6.83743e-06 6.02276 0 5.95377L0 4.04623C6.83743e-06 3.97725 0.0246739 3.91109 0.0685762 3.86231C0.112479 3.81353 0.172021 3.78612 0.234108 3.78611H3.4075V0.26012C3.4075 0.116351 3.51242 0 3.64161 0H5.35839C5.42048 7.59714e-06 5.48002 0.0274155 5.52392 0.0761958C5.56783 0.124976 5.59249 0.191134 5.5925 0.26012V3.78611H8.76587C8.79661 3.7861 8.82706 3.79283 8.85546 3.8059C8.88387 3.81897 8.90968 3.83813 8.93142 3.86228C8.95316 3.88644 8.97041 3.91512 8.98217 3.94668C8.99393 3.97824 8.99998 4.01207 8.99998 4.04623Z" fill="white"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -1,0 +1,53 @@
+<article class="news-card">
+  <div class="news-card__media">
+    <img
+      src="{{ item.image }}"
+      alt=""
+      class="news-card__image"
+      loading="lazy"
+    />
+  </div>
+  <div class="news-card__content">
+    <div class="news-card__info">
+      <time class="news-card__date" datetime="{{ item.datetime }}"
+        >{{ item.date }}</time
+      >
+      <h3 class="news-card__title">{{ item.title }}</h3>
+    </div>
+    <a href="{{ item.link }}" class="news-card__link">
+      <span class="news-card__link-text">Подробнее</span>
+      <svg
+        width="36"
+        height="36"
+        viewBox="0 0 36 36"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0_269_3178)">
+          <rect
+            width="36"
+            height="36"
+            rx="12"
+            transform="matrix(-1 0 0 1 36 0)"
+            fill="#ED314D"
+          />
+          <path
+            d="M14.8696 22.0984L19.2231 17.6082L14.8696 13.118L16.2099 11.7386L21.9131 17.6082L16.2099 23.4778L14.8696 22.0984Z"
+            fill="white"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0_269_3178">
+            <rect
+              width="36"
+              height="36"
+              rx="12"
+              transform="matrix(-1 0 0 1 36 0)"
+              fill="white"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </a>
+  </div>
+</article>

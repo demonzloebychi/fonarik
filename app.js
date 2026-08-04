@@ -122,6 +122,30 @@ app.get('/api/docs', (req, res) => {
   }
 });
 
+app.get('/api/news', (req, res) => {
+  const limit = parseInt(req.query.limit, 10) || 6;
+
+  const baseArray = (commonData && commonData.newsData) || [];
+  const slicedItems = baseArray.slice(0, limit);
+  let htmlResult = '';
+
+  try {
+    slicedItems.forEach(item => {
+      htmlResult += env.render('components/news-card.html', {
+        item,
+        commonData
+      });
+    });
+
+    res.json({
+      html: htmlResult,
+      hasMore: slicedItems.length < baseArray.length
+    });
+  } catch (error) {
+    console.error('Ошибка Nunjucks при AJAX-рендере новостей:', error);
+    res.status(500).json({ error: error.message });
+  }
+});
 
 // Отправка в Telegram
 app.post('/api/call', upload.single('file'), async (req, res) => {

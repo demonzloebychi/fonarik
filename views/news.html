@@ -1,0 +1,19 @@
+{% extends "blocks/layout.html" %}
+
+{% block title %}Новости{% endblock %}
+
+
+{% import "blocks/reusable/hero.html" as ui %}
+
+
+{% block content %}
+
+    {{ ui.hero({
+    title: "Следите за новостями благотворительного фонда",
+    class: 'page-news-hero'
+    }) }}
+
+    {% include "blocks/news-page/news-listing.html" %} 
+
+
+{% endblock %}

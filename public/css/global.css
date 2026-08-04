@@ -30,6 +30,11 @@ body.lock {
   margin: 0 auto;
   padding: 0 15px;
 }
+.container-lg {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
 
 .text-xs {
   font-size: clamp(12px, 1.3vw, 14px);
