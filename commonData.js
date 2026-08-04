@@ -15,6 +15,10 @@ module.exports = {
       url: "/youHelped/",
     },
     {
+      title: "Помочь",
+      url: "/help/",
+    },
+    {
       title: "Отчеты",
       url: "/reports/",
     },
@@ -36,6 +40,10 @@ module.exports = {
     {
       title: "Вы помогли",
       url: "/youHelped/",
+    },
+    {
+      title: "Помочь",
+      url: "/help/",
     },
     {
       title: "Отчеты",
