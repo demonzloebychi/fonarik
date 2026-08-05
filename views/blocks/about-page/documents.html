@@ -1,5 +1,5 @@
 {% macro documentsBlock(title="Документы", items=[], initialCount=4, step=4, showMore=true, type="docs") %}
-<section class="docs">
+<section class="docs {{ 'reports' if type == 'reports' }}">
   <div class="docs__container">
     <h2 class="docs__title">{{ title }}</h2>
     
@@ -14,7 +14,7 @@
 
     {# Кнопка показывается, если элементов в базе больше, чем стартовое количество #}
     {% if showMore and items.length > initialCount %}
-      <div class="docs__actions" style="text-align: center; margin-top: 30px;">
+      <div class="docs__actions">
         <button 
           type="button"
           class="btn docs__load-more" 

@@ -381,5 +381,6 @@
   }
   .help-section__more-btn--mobile {
     display: block;
+    margin-top: 30px;
   }
 }
