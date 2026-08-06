@@ -1,64 +1,46 @@
 <div class="hero-form">
   <h2 class="hero-form__title">ПОМОЧЬ</h2>
 
-  <form action="#" class="hero-form__body">
-    <div class="hero-form__type-toggle">
-      <label class="hero-form__type-label">
-        <input
-          type="radio"
-          name="payment_type"
-          value="monthly"
-          class="hero-form__type-input"
-          checked
-        />
-        <span class="hero-form__type-btn">Ежемесячно</span>
-      </label>
+<form action="#" class="hero-form__body" data-form="donation">
+  <div class="hero-form__type-toggle">
+    <label class="hero-form__type-label">
+      <input type="radio" name="payment_type" value="once" class="hero-form__type-input" data-payment-type checked />
+      <span class="hero-form__type-btn">Разово</span>
+    </label>
+    <label class="hero-form__type-label">
+      <input type="radio" name="payment_type" value="monthly" class="hero-form__type-input" data-payment-type />
+      <span class="hero-form__type-btn">Ежемесячно</span>
+    </label>
+  </div>
 
-      <label class="hero-form__type-label">
-        <input
-          type="radio"
-          name="payment_type"
-          value="once"
-          class="hero-form__type-input"
-        />
-        <span class="hero-form__type-btn">Разово</span>
-      </label>
-    </div>
+  <div class="hero-form__amounts">
+    <label class="hero-form__amount-label">
+      <input type="radio" name="amount_option" value="300" class="hero-form__amount-input" data-amount-option checked />
+      <span class="hero-form__amount-btn">300 ₽</span>
+    </label>
+    <label class="hero-form__amount-label">
+      <input type="radio" name="amount_option" value="500" class="hero-form__amount-input" data-amount-option />
+      <span class="hero-form__amount-btn">500 ₽</span>
+    </label>
+    <label class="hero-form__amount-label">
+      <input type="radio" name="amount_option" value="700" class="hero-form__amount-input" data-amount-option />
+      <span class="hero-form__amount-btn">700 ₽</span>
+    </label>
+  </div>
 
-    <div class="hero-form__field">
-      <input
-        type="text"
-        placeholder="Введите сумму"
-        class="hero-form__input"
-        aria-label="Введите сумму"
-      />
-    </div>
+  <div class="hero-form__field">
+    <input type="number" name="custom_amount" placeholder="Другая сумма" class="hero-form__input" min="1" data-amount-custom />
+  </div>
 
-    <div class="hero-form__contacts">
-      <span class="hero-form__subtitle">Контактные данные</span>
-      <input
-        type="text"
-        placeholder="Ваше имя"
-        class="hero-form__input"
-        aria-label="Ваше имя"
-      />
-      <input
-        type="email"
-        placeholder="E-mail"
-        class="hero-form__input"
-        aria-label="E-mail"
-      />
-      <input
-        type="tel"
-        placeholder="Телефон"
-        class="hero-form__input"
-        aria-label="Телефон"
-      />
-    </div>
+  <div class="hero-form__contacts">
+    <span class="hero-form__subtitle">Контактные данные</span>
+    <input type="text" name="name" placeholder="Ваше имя" class="hero-form__input" required data-field="name" />
+    <input type="email" name="email" placeholder="E-mail" class="hero-form__input" required data-field="email" />
+  </div>
 
-    <button type="submit" class="hero-form__submit-btn">
-      ПОЖЕРТВОВАТЬ
-    </button>
-    <a href="/other-ways" class="hero-form__link">Другие способы</a>
-  </form>
+  <button type="submit" class="hero-form__submit-btn" data-submit-btn>
+    ПОЖЕРТВОВАТЬ
+  </button>
+  <a href="/other-ways" class="hero-form__link">Другие способы</a>
+</form>
 </div>

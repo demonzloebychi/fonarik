@@ -29,36 +29,40 @@
   gap: 15px;
 }
 
-/* Контейнер тумблера */
-.hero-form__type-toggle {
+/* ==========================================================================
+   ТАБЛЕТКИ / ТОГГЛЫ (Тип оплаты и суммы)
+   ========================================================================== */
+
+/* Контейнеры переключателей */
+.hero-form__type-toggle,
+.hero-form__amounts {
   display: flex;
   gap: 12px;
   width: 100%;
 }
 
-/* Элемент label растягивается на равные части */
-.hero-form__type-label {
+/* Обертка label растягивается на равные части */
+.hero-form__type-label,
+.hero-form__amount-label {
   flex: 1;
   cursor: pointer;
   user-select: none;
 }
 
-/* Скрываем стандартный инпут (accessible visually-hidden) */
-.hero-form__type-input {
+/* Сбрасываем родной радио-инпут через appearance */
+.hero-form__type-input,
+.hero-form__amount-input {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  width: 0;
+  height: 0;
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
 }
 
-/* Стилизация неактивной кнопки (прозрачная с белым бордером) */
-.hero-form__type-btn {
+/* Базовые стили для внешних спанов-кнопок */
+.hero-form__type-btn,
+.hero-form__amount-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -75,20 +79,31 @@
   text-align: center;
 }
 
-/* Активное состояние (когда radio checked) — белая таблетка с красным текстом */
-.hero-form__type-input:checked + .hero-form__type-btn {
+/* Ховер для неактивных кнопок */
+.hero-form__type-label:hover .hero-form__type-input:not(:checked) + .hero-form__type-btn,
+.hero-form__amount-label:hover .hero-form__amount-input:not(:checked) + .hero-form__amount-btn {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Активное состояние (Checked) */
+.hero-form__type-input:checked + .hero-form__type-btn,
+.hero-form__amount-input:checked + .hero-form__amount-btn {
   background-color: var(--white);
   border-color: var(--white);
   color: var(--red);
   font-weight: 400;
 }
 
-/* Состояние при ховере для неактивной кнопки */
-.hero-form__type-label:hover
-  .hero-form__type-input:not(:checked)
-  + .hero-form__type-btn {
-  background-color: rgba(255, 255, 255, 0.15);
+/* Фокус с клавиатуры (доступность) */
+.hero-form__type-input:focus-visible + .hero-form__type-btn,
+.hero-form__amount-input:focus-visible + .hero-form__amount-btn {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
 }
+
+/* ==========================================================================
+   ПОЛЯ ВВОДА И ТЕКСТ
+   ========================================================================== */
 
 .hero-form__field,
 .hero-form__contacts {
@@ -120,11 +135,31 @@
   text-align: center;
   box-sizing: border-box;
   outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .hero-form__input::placeholder {
   color: rgba(255, 255, 255, 0.8);
 }
+
+.hero-form__input:focus {
+  border-color: var(--yellow);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Убираем стрелочки спиннера у инпута с типом number */
+.hero-form__input[type="number"]::-webkit-outer-spin-button,
+.hero-form__input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.hero-form__input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ==========================================================================
+   КНОПКА И ССЫЛКА
+   ========================================================================== */
 
 .hero-form__submit-btn {
   width: 100%;

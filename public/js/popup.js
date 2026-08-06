@@ -4,9 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentStep = 1;
   const totalSteps = 3;
   let selectedAmount = 300;
-  let selectedFrequency = 'monthly'; // monthly | once
+  let selectedFrequency = 'once'; // monthly | once
 
   // Элементы
+  const form = document.querySelector('.donation-step__form');
   const customInput = document.querySelector('[data-custom-amount]');
   const amountBtns = document.querySelectorAll('[data-amount]');
   const toggleBtns = document.querySelectorAll('[data-frequency]');
@@ -18,14 +19,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
+  // Валидация текущего шага перед переходом далее
+  const validateStep = (step) => {
+    if (step === 1) {
+      if (!selectedAmount || selectedAmount <= 0) {
+        alert('Пожалуйста, выберите или введите корректную сумму.');
+        customInput?.focus();
+        return false;
+      }
+    }
+
+    if (step === 2) {
+      const paymentMethod = form.querySelector('input[name="payment_method"]:checked');
+      if (!paymentMethod) {
+        alert('Пожалуйста, выберите способ оплаты.');
+        return false;
+      }
+    }
+
+    return true;
+  };
+
   // 2. Функция переключения между шагами
   const goToStep = (stepNumber) => {
     const targetStep = parseInt(stepNumber, 10);
     if (isNaN(targetStep) || targetStep < 1 || targetStep > totalSteps) return;
 
+    // Если пытаемся пойти ВПЕРЕД — проверяем текущий шаг
+    if (targetStep > currentStep) {
+      for (let s = currentStep; s < targetStep; s++) {
+        if (!validateStep(s)) return;
+      }
+    }
+
     currentStep = targetStep;
 
-    // Переключениевидимости панелей
+    // Переключение видимости панелей
     document.querySelectorAll('[data-step-pane]').forEach(pane => {
       const paneStep = parseInt(pane.getAttribute('data-step-pane'), 10);
       if (paneStep === currentStep) {
@@ -100,7 +129,6 @@ document.addEventListener('DOMContentLoaded', () => {
     customInput.addEventListener('input', (e) => {
       const val = parseInt(e.target.value, 10);
 
-      // Сбрасываем подсвеченные фиксированные кнопки
       amountBtns.forEach(b => b.classList.remove('donation-step__amount-btn_active'));
 
       if (val && val > 0) {
@@ -170,5 +198,63 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+  // ==========================================
+  // Отправка формы (Шаг 3)
+  // ==========================================
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      // ПЕРВЫМ ДЕЛОМ глушим стандартный HTTP POST браузера
+      e.preventDefault();
+
+      // Проверяем валидацию 1 и 2 шага перед финальной отправкой
+      if (!validateStep(1) || !validateStep(2)) {
+        return;
+      }
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      try {
+        // Собираем данные из полей 3-го и предыдущих шагов
+        const formData = {
+          frequency: selectedFrequency,
+          amount: selectedAmount,
+          paymentMethod: form.querySelector('input[name="payment_method"]:checked')?.value || 'card',
+          comment: form.querySelector('input[name="comment"]')?.value.trim() || '',
+          firstname: form.querySelector('input[name="firstname"]')?.value.trim() || '',
+          lastname: form.querySelector('input[name="lastname"]')?.value.trim() || '',
+          email: form.querySelector('input[name="email"]')?.value.trim() || '',
+          privacyPolicy: form.querySelector('input[name="privacy_policy"]')?.checked || false,
+          offerAgreement: form.querySelector('input[name="offer_agreement"]')?.checked || false,
+        };
+
+        if (submitBtn) submitBtn.disabled = true;
+
+        const response = await fetch('/api/donate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(result.message || `Сервер ответил со статусом ${response.status}`);
+        }
+
+        alert('Спасибо за ваше пожертвование!');
+        form.reset();
+        closePopup(form.closest('.popup-overlay'));
+
+      } catch (error) {
+        console.error('Ошибка при отправке формы:', error);
+        alert(`Ошибка при отправке: ${error.message}`);
+      } finally {
+        if (submitBtn) submitBtn.disabled = false;
+      }
+    });
+  }
 
 });

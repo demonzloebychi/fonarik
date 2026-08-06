@@ -19,72 +19,7 @@
         >ВСЕ ИСТОРИИ</a
       >
 
-      <div class="help-section__donation-form donation-form">
-        <h3 class="donation-form__title">ПОМОЧЬ</h3>
-
-        <form action="#" class="donation-form__body">
-          <div class="donation-form__type-toggle">
-            <label class="donation-form__type-label">
-              <input
-                type="radio"
-                name="payment_type"
-                value="monthly"
-                class="donation-form__type-input"
-                checked
-              />
-              <span class="donation-form__type-btn">Ежемесячно</span>
-            </label>
-
-            <label class="donation-form__type-label">
-              <input
-                type="radio"
-                name="payment_type"
-                value="once"
-                class="donation-form__type-input"
-              />
-              <span class="donation-form__type-btn">Разово</span>
-            </label>
-          </div>
-
-          <div class="donation-form__field">
-            <input
-              type="text"
-              placeholder="Введите сумму"
-              class="donation-form__input"
-            />
-          </div>
-
-          <div class="donation-form__contacts">
-            <span class="donation-form__subtitle">Контактные данные</span>
-            <input
-              type="text"
-              placeholder="Ваше имя"
-              class="donation-form__input"
-            />
-            <input
-              type="email"
-              placeholder="E-mail"
-              class="donation-form__input"
-            />
-            <input
-              type="tel"
-              placeholder="Телефон"
-              class="donation-form__input"
-            />
-            <label class="donation-form__agreement">
-              <input type="checkbox" class="donation-form__checkbox" required />
-              <span class="donation-form__agreement-text">
-                Я согласен с <a href="/privacy-policy" class="donation-form__agreement-link">политикой конфиденциальности</a>
-              </span>
-            </label>
-          </div>
-
-          <button type="submit" class="donation-form__submit-btn">
-            ПОЖЕРТВОВАТЬ
-          </button>
-          <a href="/other-ways" class="donation-form__link">Другие способы</a>
-        </form>
-      </div>
+      {% include "components/help-form.html" %}
 
       <!-- Слайдер Swiper с карточками -->
       <div class="help-section__slider">

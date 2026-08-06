@@ -50,7 +50,7 @@
 
       <!-- Контент шагов -->
       <main class="donation-step__main">
-        <form class="donation-step__form" action="/donate" method="POST">
+        <form class="donation-step__form" action="/api/donate" method="POST">
           <!-- ================= ШАГ 1: СУММА И ПЕРИОДИЧНОСТЬ ================= -->
           <div
             class="donation-step__pane donation-step__pane_active"
@@ -71,17 +71,18 @@
                   <button
                     type="button"
                     class="donation-step__toggle-btn donation-step__toggle-btn_active"
-                    data-frequency="monthly"
-                  >
-                    Ежемесячно
-                  </button>
-                  <button
-                    type="button"
-                    class="donation-step__toggle-btn"
                     data-frequency="once"
                   >
                     Разово
                   </button>
+                  <button
+                    type="button"
+                    class="donation-step__toggle-btn "
+                    data-frequency="monthly"
+                  >
+                    Ежемесячно
+                  </button>
+                  
                 </div>
               </div>
 
@@ -187,7 +188,7 @@
                   >Комментарий</label
                 >
                 <input
-                  type="comment"
+                  type="text"
                   id="donor-comment"
                   name="comment"
                   class="donation-step__input"

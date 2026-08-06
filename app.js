@@ -200,6 +200,113 @@ Email: ${email || 'Не указан'}
   }
 });
 
+
+app.post('/api/donate', async (req, res) => {
+  const { 
+    // Данные со старой формы:
+    paymentType, 
+    agreement,
+    name,
+
+    // Данные с новой формы (поп-апа):
+    frequency, 
+    paymentMethod, 
+    comment, 
+    firstname, 
+    lastname, 
+    privacyPolicy, 
+    offerAgreement,
+
+    // Общие поля для обеих форм:
+    amount, 
+    email 
+  } = req.body;
+
+  // 1. Собираем единое имя (работает и для старой, и для новой формы)
+  let fullName = '';
+  if (firstname || lastname) {
+    fullName = `${firstname || ''} ${lastname || ''}`.trim();
+  } else if (name) {
+    fullName = name.trim();
+  }
+
+  // 2. Валидация обязательных полей
+  if (!amount || !fullName || !email) {
+    return res.status(400).json({ 
+      success: false, 
+      message: 'Заполните обязательные поля: имя, email и сумма' 
+    });
+  }
+
+  const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
+  const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+
+  if (!TELEGRAM_BOT_TOKEN || !TELEGRAM_CHAT_ID) {
+    console.error('❌ ОШИБКА: TELEGRAM_BOT_TOKEN или TELEGRAM_CHAT_ID не заданы в .env!');
+    return res.status(500).json({ 
+      success: false, 
+      message: 'Ошибка настройки сервера' 
+    });
+  }
+
+  // 3. Определяем периодичность и способ оплаты
+  const rawFrequency = frequency || paymentType;
+  const frequencyLabel = rawFrequency === 'monthly' ? 'Ежемесячно 🔄' : 'Разово ⚡';
+  
+  const paymentMethodLabel = paymentMethod === 'sbp' ? 'СБП 📱' : 'Банковская карта 💳';
+
+  // 4. Формируем сообщение для Telegram
+  let messageText = `
+❤️ *Новое пожертвование!*
+
+*Имя:* ${fullName}
+*Email:* ${email}
+*Сумма:* ${amount} ₽
+*Тип:* ${frequencyLabel}
+  `.trim();
+
+  // Если запрос пришел с новой пошаговой формы (где есть способ оплаты и комментарий)
+  if (paymentMethod) {
+    messageText += `\n*Способ оплаты:* ${paymentMethodLabel}`;
+  }
+  if (comment) {
+    messageText += `\n*Комментарий:* ${comment}`;
+  }
+
+  // Согласия
+  const isAgreed = agreement || (privacyPolicy && offerAgreement);
+  messageText += `\n*Согласие с правилами:* ${isAgreed ? 'Да ✅' : 'Нет ❌'}`;
+
+  try {
+    const response = await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chat_id: TELEGRAM_CHAT_ID,
+        text: messageText,
+        parse_mode: 'Markdown',
+      }),
+    });
+
+    const data = await response.json();
+
+    if (!data.ok) {
+      console.error('❌ Telegram API Error:', data);
+      throw new Error(data.description || 'Ошибка Telegram API');
+    }
+
+    res.json({ success: true, message: 'Пожертвование успешно отправлено' });
+  } catch (error) {
+    console.error('❌ Ошибка отправки пожертвования:', error.message);
+    res.status(500).json({ 
+      success: false, 
+      message: 'Ошибка сервера при отправке сообщения' 
+    });
+  }
+});
+
+
+
 // 4. Динамические страницы (Синхронный `readdirSync` надежнее при билде Vercel)
 // try {
 //   const files = fs.readdirSync(viewsPath);

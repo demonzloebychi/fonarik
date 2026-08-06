@@ -126,9 +126,7 @@
 .donation-form__title {
   margin-bottom: clamp(25px, 3vw, 36px);
   text-align: center;
-
   color: var(--white);
-
   font-family: var(--font-family);
   font-weight: 700;
   font-size: clamp(36px, 3.8vw, 40px);
@@ -142,36 +140,40 @@
   flex: 1;
 }
 
-/* Контейнер тумблера */
-.donation-form__type-toggle {
+/* ==========================================================================
+   ТАБЛЕТКИ / ТОГГЛЫ (Тип оплаты и выбор суммы)
+   ========================================================================== */
+
+/* Общие контейнеры */
+.donation-form__type-toggle,
+.donation-form__amounts {
   display: flex;
   gap: 12px;
   width: 100%;
 }
 
-/* Элемент label растягивается на равные части */
-.donation-form__type-label {
+/* Растягиваем label на равные доли */
+.donation-form__type-label,
+.donation-form__amount-label {
   flex: 1;
   cursor: pointer;
   user-select: none;
 }
 
-/* Скрываем стандартный инпут */
-.donation-form__type-input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+/* Сбрасываем внешний вид самого radio-инпута через appearance */
+.donation-form__type-input,
+.donation-form__amount-input {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  width: 0;
+  height: 0;
+  position: absolute; /* Чтобы не занимал места в потоке flex */
 }
 
-/* Стилизация внешнего вида кнопки (по умолчанию - неактивная "Разово") */
-.donation-form__type-btn {
+/* Базовые стили для span-таблеток */
+.donation-form__type-btn,
+.donation-form__amount-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -181,26 +183,39 @@
   border-radius: 30px;
   background-color: transparent;
   color: var(--white);
-  transition: all 0.2s ease-in-out;
-  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 16px;
   text-align: center;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
 }
 
-/* Активное состояние (когда radio checked) — белая таблетка с красным текстом */
-.donation-form__type-input:checked + .donation-form__type-btn {
-  background-color: var(--white);
-  border-color: var(--white);
-  color: var(--red); /* Красный цвет текста как на макете */
-}
-
-/* Состояние при ховере для неактивной кнопки */
-.donation-form__type-label:hover
-  .donation-form__type-input:not(:checked)
-  + .donation-form__type-btn {
+/* Ховер на неактивную кнопку */
+.donation-form__type-label:hover .donation-form__type-input:not(:checked) + .donation-form__type-btn,
+.donation-form__amount-label:hover .donation-form__amount-input:not(:checked) + .donation-form__amount-btn {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-/* Поля ввода */
+/* Активное состояние (инпут checked -> меняем соседний span) */
+.donation-form__type-input:checked + .donation-form__type-btn,
+.donation-form__amount-input:checked + .donation-form__amount-btn {
+  background-color: var(--white);
+  border-color: var(--white);
+  color: var(--red);
+  font-weight: 600;
+}
+
+/* Фокус с клавиатуры (доступность) */
+.donation-form__type-input:focus-visible + .donation-form__type-btn,
+.donation-form__amount-input:focus-visible + .donation-form__amount-btn {
+  outline: 2px solid var(--yellow);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   ПОЛЯ ВВОДА ТЕКСТА И СУММЫ
+   ========================================================================== */
+
 .donation-form__input {
   width: 100%;
   padding: 12px 18px;
@@ -210,10 +225,30 @@
   outline: none;
   box-sizing: border-box;
   color: var(--white);
+  font-family: inherit;
+  font-size: 16px;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
+
 .donation-form__input::placeholder {
-  color: var(--white);
+  color: rgba(255, 255, 255, 0.8);
 }
+
+.donation-form__input:focus {
+  border-color: var(--yellow);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Убираем стрелочки у инпута number */
+.donation-form__input[type="number"]::-webkit-outer-spin-button,
+.donation-form__input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.donation-form__input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .donation-form__contacts {
   display: flex;
   flex-direction: column;
@@ -230,51 +265,10 @@
   color: var(--white);
 }
 
-/* Кнопка и ссылка формы */
-.donation-form__submit-btn {
-  width: 100%;
-  padding-block: 11px;
-  border: 1px solid rgba(255, 255, 255, 0);
-  border-radius: 55px;
-  background-color: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  margin-top: auto;
+/* ==========================================================================
+   ЧЕКБОКС (Нативная стилизация через appearance: none)
+   ========================================================================== */
 
-  font-family: var(--second-family);
-  font-weight: 700;
-  font-size: 20px;
-  text-align: center;
-  color: var(--red);
-}
-
-.donation-form__link {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-
-  font-family: var(--second-family);
-  font-weight: 400;
-  font-size: clamp(16px, 1.8vw, 20px);
-  text-align: center;
-  color: #fff;
-}
-
-.child-card-button-prev,
-.child-card-button-next {
-  border-radius: 15px !important;
-  background: var(--red) !important;
-  height: 46px !important;
-  width: 46px !important;
-  padding: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Блок соглашения */
 .donation-form__agreement {
   display: flex;
   align-items: center;
@@ -282,11 +276,11 @@
   cursor: pointer;
   user-select: none;
   font-size: 14px;
-  color: var(--white); /* Белый текст под красный фон */
+  color: var(--white);
   margin-bottom: 20px;
 }
 
-/* Кастомный чекбокс 24x24 через appearance */
+/* Кастомный чекбокс 24x24 прямо на теге input */
 .donation-form__checkbox {
   appearance: none;
   -webkit-appearance: none;
@@ -297,37 +291,27 @@
   border-radius: 6px;
   background-color: transparent;
   cursor: pointer;
-  transition:
-    background-color 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-
-  /* Фоновая галочка (скрыта по умолчанию) */
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 14px 14px;
 }
 
-/* Ховер на чекбокс — легкая подсветка рамки */
 .donation-form__checkbox:hover {
   border-color: var(--yellow-light);
 }
 
-/* Состояние Checked: белый квадрат + КРАСНАЯ галочка */
 .donation-form__checkbox:checked {
   background-color: var(--white);
   border-color: var(--white);
-  /* SVG-галочка красного цвета (%23ed314d = #ed314d) */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ed314d' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E");
 }
 
-/* Фокус для доступности с клавиатуры */
 .donation-form__checkbox:focus-visible {
   outline: 2px solid var(--yellow);
   outline-offset: 2px;
 }
 
-/* Ссылка в тексте соглашения */
 .donation-form__agreement-link {
   color: var(--yellow);
   text-decoration: underline;
@@ -337,6 +321,47 @@
 
 .donation-form__agreement-link:hover {
   color: var(--yellow-light);
+}
+
+/* ==========================================================================
+   КНОПКА И ССЫЛКИ
+   ========================================================================== */
+
+.donation-form__submit-btn {
+  width: 100%;
+  padding-block: 11px;
+  border: 1px solid transparent;
+  border-radius: 55px;
+  background-color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-top: auto;
+  font-family: var(--second-family);
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  color: var(--red);
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.donation-form__submit-btn:hover {
+  opacity: 0.95;
+}
+
+.donation-form__submit-btn:active {
+  transform: scale(0.99);
+}
+
+.donation-form__link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-family: var(--second-family);
+  font-weight: 400;
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: #fff;
 }
 
 @media (max-width: 991px) {

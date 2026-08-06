@@ -1,0 +1,52 @@
+    <div class="help-section__donation-form donation-form">
+        <h3 class="donation-form__title">ПОМОЧЬ</h3>
+
+        <form action="#" class="donation-form__body" data-form="donation">
+  <div class="donation-form__type-toggle">
+    <label class="donation-form__type-label">
+      <input type="radio" name="payment_type" value="once" class="donation-form__type-input" data-payment-type checked />
+      <span class="donation-form__type-btn">Разово</span>
+    </label>
+    <label class="donation-form__type-label">
+      <input type="radio" name="payment_type" value="monthly" class="donation-form__type-input" data-payment-type />
+      <span class="donation-form__type-btn">Ежемесячно</span>
+    </label>
+  </div>
+
+  <div class="donation-form__amounts">
+    <label class="donation-form__amount-label">
+      <input type="radio" name="amount_option" value="300" class="donation-form__amount-input" data-amount-option checked />
+      <span class="donation-form__amount-btn">300 ₽</span>
+    </label>
+    <label class="donation-form__amount-label">
+      <input type="radio" name="amount_option" value="500" class="donation-form__amount-input" data-amount-option />
+      <span class="donation-form__amount-btn">500 ₽</span>
+    </label>
+    <label class="donation-form__amount-label">
+      <input type="radio" name="amount_option" value="700" class="donation-form__amount-input" data-amount-option />
+      <span class="donation-form__amount-btn">700 ₽</span>
+    </label>
+  </div>
+
+  <div class="donation-form__field">
+    <input type="number" name="custom_amount" placeholder="Другая сумма" class="donation-form__input" min="1" data-amount-custom />
+  </div>
+
+  <div class="donation-form__contacts">
+    <span class="donation-form__subtitle">Контактные данные</span>
+    <input type="text" name="name" placeholder="Ваше имя" class="donation-form__input" required data-field="name" />
+    <input type="email" name="email" placeholder="E-mail" class="donation-form__input" required data-field="email" />
+    <label class="donation-form__agreement">
+      <input type="checkbox" name="agreement" class="donation-form__checkbox" required data-field="agreement" />
+      <span class="donation-form__agreement-text">
+        Я согласен с <a href="/privacy-policy" class="donation-form__agreement-link">политикой конфиденциальности</a>
+      </span>
+    </label>
+  </div>
+
+  <button type="submit" class="donation-form__submit-btn" data-submit-btn>
+    ПОЖЕРТВОВАТЬ
+  </button>
+  <a href="/other-ways" class="donation-form__link">Другие способы</a>
+</form>
+      </div>
