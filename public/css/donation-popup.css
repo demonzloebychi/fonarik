@@ -1,0 +1,591 @@
+/* ==========================================================================
+   Popup & Modal Structure
+   ========================================================================== */
+
+/* Блокировка прокрутки страницы при открытом поп-апе */
+body.popup-open {
+  overflow: hidden;
+}
+
+/* Оверлей */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-overlay_active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-overlay__backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+/* Контейнер модального окна */
+.donation-step {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow-y: auto;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: var(--white);
+  border-radius: 15px;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  color: var(--black);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.popup-overlay_active .donation-step {
+  transform: translateY(0);
+}
+
+/* Кнопка закрытия */
+.donation-step__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--black);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  padding: 5px 10px;
+}
+
+.donation-step__close:hover {
+  opacity: 1;
+}
+
+/* Главный контейнер */
+.donation-step__container {
+  display: flex;
+  gap: 70px;
+  align-items: flex-start;
+}
+
+/* ==========================================================================
+   Сайдбар и навигация
+   ========================================================================== */
+
+.donation-step__sidebar {
+  width: 272px;
+  flex-shrink: 0;
+}
+
+.donation-step__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.donation-step__nav-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+
+.donation-step__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 400;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  border: 1px solid var(--red);
+  color: var(--black);
+  transition: all 0.2s ease;
+}
+
+.donation-step__nav-item_completed .donation-step__badge {
+  background-color: transparent;
+  border-color: var(--red);
+  color: var(--black);
+}
+
+.donation-step__nav-item_active .donation-step__badge {
+  background-color: var(--red);
+  border-color: var(--red);
+  color: var(--white); /* Белый текст на красном фоне */
+}
+
+.donation-step__nav-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  opacity: 0.8;
+  color: var(--black);
+}
+
+/* Разделитель */
+.donation-step__divider {
+  width: 1px;
+  height: 501px;
+  background-color: var(--red);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   Контент шагов
+   ========================================================================== */
+
+.donation-step__main {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.donation-step__pane {
+  display: none;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.donation-step__pane_active {
+  display: flex;
+}
+
+.donation-step__header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.donation-step__number {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--red);
+}
+
+.donation-step__title {
+  margin: 0;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--black);
+}
+
+.donation-step__content {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ==========================================================================
+   Шаг 01: Выбор периодичности и сумм
+   ========================================================================== */
+
+.donation-step__group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.donation-step__group-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--black);
+  opacity: 0.8;
+}
+
+/* Переключатель «Ежемесячно / Разово» */
+.donation-step__toggle-group {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.donation-step__toggle-btn {
+  width: 140px;
+  height: 46px;
+  border-radius: 100px;
+  border: 1px solid var(--red);
+  background-color: transparent;
+  color: var(--black);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.donation-step__toggle-btn_active {
+  background-color: var(--red);
+  color: var(--white); /* Белый текст на красном фоне */
+  border-color: var(--red);
+}
+
+/* Фиксированные суммы (300, 500, 1000, 3000) */
+.donation-step__amounts-group {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.donation-step__amount-btn {
+  width: 140px;
+  height: 46px;
+  border-radius: 100px;
+  border: 1px solid var(--red);
+  background-color: transparent;
+  color: var(--black);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.donation-step__amount-btn_active {
+  background-color: var(--red);
+  color: var(--white); /* Белый текст на красном фоне */
+  border-color: var(--red);
+}
+
+/* Поле своей суммы */
+.donation-step__custom-amount-wrapper {
+  width: 100%;
+}
+
+.donation-step__custom-amount-input {
+  width: 100%;
+  height: 46px;
+  border-radius: 100px;
+  border: 1px solid var(--red);
+  background: transparent;
+  padding: 0 18px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--black);
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.donation-step__custom-amount-input::placeholder {
+  color: var(--black);
+  opacity: 0.5;
+}
+
+.donation-step__custom-amount-input:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 2px rgba(237, 49, 77, 0.2);
+}
+
+.donation-step__custom-amount-input.donation-step__custom-amount-input_active {
+  background-color: rgba(237, 49, 77, 0.05);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   Поля ввода и инпуты (Шаги 02, 03)
+   ========================================================================== */
+
+.donation-step__row {
+  display: flex;
+  gap: 30px;
+}
+
+.donation-step__row .donation-step__field {
+  flex: 1;
+}
+
+.donation-step__field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.donation-step__label {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.donation-step__input {
+  width: 100%;
+  height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--red);
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--black);
+  outline: none;
+  box-sizing: border-box;
+  background: transparent;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.donation-step__input::placeholder {
+  color: var(--black);
+  opacity: 0.5;
+}
+
+.donation-step__input:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 2px rgba(237, 49, 77, 0.2);
+}
+
+.donation-step__payment-options {
+  display: flex;
+  gap: 20px;
+}
+
+.donation-step__radio-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Кастомная радиокнопка (круг 46x46 с плюсом) */
+.donation-step__radio-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 100px;
+  border: 1px solid #6c6c6c;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* Плюсик внутри кнопки */
+.donation-step__radio-button::before {
+  content: "+";
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1;
+  color: var(--black);
+  transition: color 0.2s ease;
+}
+
+/* Активное состояние (checked) — заливка var(--red) и белый плюс */
+.donation-step__radio-button:checked {
+  background-color: var(--red);
+  border-color: var(--red);
+}
+
+
+
+.donation-step__radio-button:focus-visible {
+  box-shadow: 0 0 0 2px rgba(237, 49, 77, 0.3);
+}
+
+/* ==========================================================================
+   Чекбоксы с appearance: none и центровкой
+   ========================================================================== */
+
+.donation-step__checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.donation-step__checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.donation-step__checkbox-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--red);
+  border-radius: 4px;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.donation-step__checkbox-input::before {
+  content: "";
+  width: 5px;
+  height: 9px;
+  border: solid var(--black); /* Белая галочка на красном фоне */
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  margin-top: -2px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.donation-step__checkbox-input:checked {
+  background-color: var(--red);
+  border-color: var(--red);
+}
+
+.donation-step__checkbox-input:checked::before {
+  opacity: 1;
+}
+
+.donation-step__checkbox-input:focus-visible {
+  box-shadow: 0 0 0 2px rgba(237, 49, 77, 0.3);
+}
+
+.donation-step__checkbox-text {
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--black);
+}
+
+/* ==========================================================================
+   Кнопки
+   ========================================================================== */
+
+.donation-step__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.donation-step__btn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.donation-step__btn_primary {
+  height: 52px;
+  background-color: var(--red);
+  color: var(--white); /* Белый текст на основной кнопке */
+  border: none;
+}
+
+.donation-step__btn_primary:hover {
+  opacity: 0.9;
+}
+
+.donation-step__btn_secondary {
+  height: 46px;
+  background-color: transparent;
+  color: var(--black);
+  border: 1px solid var(--red);
+}
+
+.donation-step__btn_secondary:hover {
+  background-color: rgba(237, 49, 77, 0.05);
+}
+
+/* ==========================================================================
+   Адаптивность (Responsive)
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .donation-step__container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .donation-step__sidebar {
+    width: 100%;
+  }
+
+  .donation-step__divider {
+    width: 100%;
+    height: 1px;
+  }
+}
+
+@media (max-width: 680px) {
+  .donation-step__amounts-group,
+  .donation-step__toggle-group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .donation-step__toggle-btn,
+  .donation-step__amount-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .donation-step {
+    padding: 25px 20px;
+  }
+
+  .donation-step__row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}

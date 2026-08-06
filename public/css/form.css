@@ -69,7 +69,7 @@
   background-color: transparent;
   color: var(--white);
   font-family: var(--second-family);
-  font-size: 13px;
+  font-size: clamp(13px, 1.3vw, 14px);
   transition: all 0.2s ease-in-out;
   box-sizing: border-box;
   text-align: center;
@@ -80,7 +80,7 @@
   background-color: var(--white);
   border-color: var(--white);
   color: var(--red);
-  font-weight: 700;
+  font-weight: 400;
 }
 
 /* Состояние при ховере для неактивной кнопки */

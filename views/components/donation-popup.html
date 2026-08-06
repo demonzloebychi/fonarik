@@ -1,0 +1,317 @@
+<!-- Модальное окно поп-апа -->
+<div class="popup-overlay" id="donation-popup" aria-hidden="true">
+  <div class="popup-overlay__backdrop" data-close-popup></div>
+
+  <div class="donation-step" role="dialog" aria-modal="true">
+    <button
+      type="button"
+      class="donation-step__close"
+      data-close-popup
+      aria-label="Закрыть"
+    >
+      &times;
+    </button>
+
+    <div class="donation-step__container">
+      <!-- Сайдбар -->
+      <aside class="donation-step__sidebar">
+        <div class="donation-step__nav">
+          <button
+            type="button"
+            class="donation-step__nav-item donation-step__nav-item_active"
+            data-step-target="1"
+          >
+            <span class="donation-step__badge">01</span>
+            <span class="donation-step__nav-title">Сумма пожертвования</span>
+          </button>
+
+          <button
+            type="button"
+            class="donation-step__nav-item"
+            data-step-target="2"
+          >
+            <span class="donation-step__badge">02</span>
+            <span class="donation-step__nav-title">Способ оплаты</span>
+          </button>
+
+          <button
+            type="button"
+            class="donation-step__nav-item"
+            data-step-target="3"
+          >
+            <span class="donation-step__badge">03</span>
+            <span class="donation-step__nav-title">Контактные данные</span>
+          </button>
+        </div>
+      </aside>
+
+      <!-- Разделительная линия -->
+      <div class="donation-step__divider"></div>
+
+      <!-- Контент шагов -->
+      <main class="donation-step__main">
+        <form class="donation-step__form" action="/donate" method="POST">
+          <!-- ================= ШАГ 1: СУММА И ПЕРИОДИЧНОСТЬ ================= -->
+          <div
+            class="donation-step__pane donation-step__pane_active"
+            data-step-pane="1"
+          >
+            <header class="donation-step__header">
+              <span class="donation-step__number">01</span>
+              <h2 class="donation-step__title">Сумма пожертвования</h2>
+            </header>
+
+            <div class="donation-step__content">
+              <!-- Выбор периодичности -->
+              <div class="donation-step__group">
+                <div class="donation-step__group-title">
+                  Выберите периодичность пожертвования
+                </div>
+                <div class="donation-step__toggle-group">
+                  <button
+                    type="button"
+                    class="donation-step__toggle-btn donation-step__toggle-btn_active"
+                    data-frequency="monthly"
+                  >
+                    Ежемесячно
+                  </button>
+                  <button
+                    type="button"
+                    class="donation-step__toggle-btn"
+                    data-frequency="once"
+                  >
+                    Разово
+                  </button>
+                </div>
+              </div>
+
+              <!-- Выбор суммы -->
+              <div class="donation-step__group">
+                <div class="donation-step__group-title">
+                  Выберите сумму пожертвования
+                </div>
+
+                <!-- Фиксированные суммы -->
+                <div class="donation-step__amounts-group">
+                  <button
+                    type="button"
+                    class="donation-step__amount-btn donation-step__amount-btn_active"
+                    data-amount="300"
+                  >
+                    300
+                  </button>
+                  <button
+                    type="button"
+                    class="donation-step__amount-btn"
+                    data-amount="500"
+                  >
+                    500
+                  </button>
+                  <button
+                    type="button"
+                    class="donation-step__amount-btn"
+                    data-amount="1000"
+                  >
+                    1000
+                  </button>
+                  <button
+                    type="button"
+                    class="donation-step__amount-btn"
+                    data-amount="3000"
+                  >
+                    3000
+                  </button>
+                </div>
+
+                <!-- Своя сумма -->
+                <div class="donation-step__custom-amount-wrapper">
+                  <input
+                    type="number"
+                    class="donation-step__custom-amount-input"
+                    placeholder="Своя сумма"
+                    data-custom-amount
+                    min="1"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="donation-step__actions">
+              <button
+                type="button"
+                class="donation-step__btn donation-step__btn_primary"
+                data-step-next
+              >
+                Пожертвовать <span data-btn-amount-text>300</span> руб.
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= ШАГ 2: СПОСОБ ОПЛАТЫ ================= -->
+          <div class="donation-step__pane" data-step-pane="2">
+            <header class="donation-step__header">
+              <span class="donation-step__number">02</span>
+              <h2 class="donation-step__title">Способ оплаты</h2>
+            </header>
+
+            <div class="donation-step__content">
+              <div class="donation-step__group">
+                <div class="donation-step__group-title">
+                  Выберите способ оплаты
+                </div>
+                <div class="donation-step__payment-options">
+                  <label class="donation-step__radio-label">
+                    <input
+                      type="radio"
+                      name="payment_method"
+                      value="card"
+                      class="donation-step__radio-button"
+                      checked
+                    />
+                    <span>Банковская карта</span>
+                  </label>
+                  <label class="donation-step__radio-label">
+                    <input
+                      type="radio"
+                      name="payment_method"
+                      value="sbp"
+                      class="donation-step__radio-button"
+                    />
+                    <span>СБП</span>
+                  </label>
+                </div>
+              </div>
+              <div class="donation-step__comment">
+                <div class="donation-step__field">
+                <label class="donation-step__label" for="donor-email"
+                  >Комментарий</label
+                >
+                <input
+                  type="comment"
+                  id="donor-comment"
+                  name="comment"
+                  class="donation-step__input"
+                  placeholder="Введите комментарий"
+                />
+              </div>
+              </div>
+            </div>
+
+            <div class="donation-step__actions">
+              <button
+                type="button"
+                class="donation-step__btn donation-step__btn_primary"
+                data-step-next
+              >
+                Пожертвовать <span data-btn-amount-text>300</span> руб.
+              </button>
+              <button
+                type="button"
+                class="donation-step__btn donation-step__btn_secondary"
+                data-step-prev
+              >
+                Назад
+              </button>
+            </div>
+          </div>
+
+          <!-- ================= ШАГ 3: КОНТАКТНЫЕ ДАННЫЕ ================= -->
+          <div class="donation-step__pane" data-step-pane="3">
+            <header class="donation-step__header">
+              <span class="donation-step__number">03</span>
+              <h2 class="donation-step__title">Контактные данные</h2>
+            </header>
+
+            <div class="donation-step__content">
+              <div class="donation-step__row">
+                <div class="donation-step__field">
+                  <label class="donation-step__label" for="donor-firstname"
+                    >Ваше имя</label
+                  >
+                  <input
+                    type="text"
+                    id="donor-firstname"
+                    name="firstname"
+                    class="donation-step__input"
+                    placeholder="Иван"
+                    required
+                  />
+                </div>
+
+                <div class="donation-step__field">
+                  <label class="donation-step__label" for="donor-lastname"
+                    >Ваша Фамилия</label
+                  >
+                  <input
+                    type="text"
+                    id="donor-lastname"
+                    name="lastname"
+                    class="donation-step__input"
+                    placeholder="Петров"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="donation-step__field">
+                <label class="donation-step__label" for="donor-email"
+                  >E-mail</label
+                >
+                <input
+                  type="email"
+                  id="donor-email"
+                  name="email"
+                  class="donation-step__input"
+                  placeholder="petrov@ivan.ru"
+                  required
+                />
+              </div>
+
+              <div class="donation-step__checkboxes">
+                <label class="donation-step__checkbox-label">
+                  <input
+                    type="checkbox"
+                    name="privacy_policy"
+                    class="donation-step__checkbox-input"
+                    required
+                  />
+                  <span class="donation-step__checkbox-text"
+                    >Я согласен с политикой обработки данных</span
+                  >
+                </label>
+
+                <label class="donation-step__checkbox-label">
+                  <input
+                    type="checkbox"
+                    name="offer_agreement"
+                    class="donation-step__checkbox-input"
+                    required
+                  />
+                  <span class="donation-step__checkbox-text"
+                    >Я согласен с офертой</span
+                  >
+                </label>
+              </div>
+            </div>
+
+            <div class="donation-step__actions">
+              <button
+                type="submit"
+                class="donation-step__btn donation-step__btn_primary"
+              >
+                Пожертвовать <span data-btn-amount-text>300</span> руб.
+              </button>
+              <button
+                type="button"
+                class="donation-step__btn donation-step__btn_secondary"
+                data-step-prev
+              >
+                Назад
+              </button>
+            </div>
+          </div>
+        </form>
+      </main>
+    </div>
+  </div>
+</div>
