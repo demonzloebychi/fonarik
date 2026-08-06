@@ -36,7 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
             : 0
 
         if (!finalAmount || finalAmount <= 0) {
-          alert("Пожалуйста, выберите или введите сумму пожертвования.")
+          //   alert("Пожалуйста, выберите или введите сумму пожертвования.")
+          window.PopupStates.openFailed()
+
           customAmountInput?.focus()
           return
         }
@@ -71,11 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
           )
         }
 
-        alert("Спасибо за ваш вклад!")
+        // alert("Спасибо за ваш вклад!")
+        window.PopupStates.openSuccess()
         form.reset()
       } catch (error) {
         console.error("Детали ошибки отправки:", error)
-        alert(`Ошибка отправки: ${error.message}`)
+        window.PopupStates.openFailed()
+        // alert(`Ошибка отправки: ${error.message}`)
       } finally {
         if (submitBtn) submitBtn.disabled = false
       }

@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const validateStep = (step) => {
     if (step === 1) {
       if (!selectedAmount || selectedAmount <= 0) {
-        alert('Пожалуйста, выберите или введите корректную сумму.');
+        window.PopupStates.openFailed('Пожалуйста, выберите или введите корректную сумму.');
         customInput?.focus();
         return false;
       }
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (step === 2) {
       const paymentMethod = form.querySelector('input[name="payment_method"]:checked');
       if (!paymentMethod) {
-        alert('Пожалуйста, выберите способ оплаты.');
+        window.PopupStates.openFailed('Пожалуйста, выберите способ оплаты.');
         return false;
       }
     }
@@ -243,14 +243,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!response.ok) {
           throw new Error(result.message || `Сервер ответил со статусом ${response.status}`);
         }
-
-        alert('Спасибо за ваше пожертвование!');
+        window.PopupStates.openSuccess();
+        // alert('Спасибо за ваше пожертвование!');
         form.reset();
         closePopup(form.closest('.popup-overlay'));
 
       } catch (error) {
         console.error('Ошибка при отправке формы:', error);
-        alert(`Ошибка при отправке: ${error.message}`);
+        // alert(`Ошибка при отправке: ${error.message}`);
+        window.PopupStates.openFailed();
+
       } finally {
         if (submitBtn) submitBtn.disabled = false;
       }
