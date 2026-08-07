@@ -27,10 +27,10 @@
   }
 }
 .needs-help__container {
-  width: 100%;
+  /* width: 100%;
   max-width: 1240px;
   margin-inline: auto;
-  padding-inline: clamp(0.938rem, -0.426rem + 3.41vw, 2.5rem);
+  padding-inline: clamp(0.938rem, -0.426rem + 3.41vw, 2.5rem); */
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -1,11 +1,12 @@
-<section class="help-section">
+<section class="help-section" data-animation="fade-up-cards">
   <div class="help-section__container">
     <!-- Шапка: заголовок и кнопка -->
     <div class="help-section__header">
-      <h2 class="help-section__title">МЫ ПОМОГАЕМ</h2>
+      <h2 class="help-section__title" data-animation="fade-up">МЫ ПОМОГАЕМ</h2>
       <a
         href="/stories"
         class="help-section__more-btn help-section__more-btn--desktop"
+        data-animation="fade-up"
         >ВСЕ ИСТОРИИ</a
       >
     </div>
@@ -24,7 +25,7 @@
       <!-- Слайдер Swiper с карточками -->
       <div class="help-section__slider">
         <div class="help-section__slider-inner swiper JS-help-slider">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper" data-animation-grid>
             {% for child in commonData.children %} {% if loop.index0 < 2 %}
             <div class="swiper-slide">
               {% include "components/child-card.html" %}

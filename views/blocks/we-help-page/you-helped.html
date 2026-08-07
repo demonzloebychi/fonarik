@@ -1,8 +1,8 @@
-<section class="needs-help">
-  <div class="needs-help__container">
-    <h2 class="needs-help__title h2__title">Вы помогли</h2>
+<section class="needs-help" data-animation="fade-up-cards">
+  <div class="needs-help__container container">
+    <h2 class="needs-help__title h2__title" data-animation="fade-up">Вы помогли</h2>
 
-    <div class="needs-help__grid" id="user-helped-container">
+    <div class="needs-help__grid" id="user-helped-container" data-animation-grid>
       {% set helpedCount = 0 %}
       {% for child in commonData.children %}
         {% if child.youHelped and helpedCount < 3 %}

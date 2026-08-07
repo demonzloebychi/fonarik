@@ -1,8 +1,8 @@
-<section class="help-section">
+<section class="help-section" data-animation="fade-up-cards">
   <div class="help-section__container">
     <!-- Шапка: заголовок и кнопка -->
     <div class="help-section__header help-section__header-compact">
-      <h2 class="help-section__title">Мы помогаем</h2>
+      <h2 class="help-section__title" data-animation="fade-up">Мы помогаем</h2>
       <a
         href="/stories"
         class="help-section__more-btn help-section__more-btn--desktop"
@@ -15,7 +15,7 @@
       <!-- Слайдер Swiper с карточками -->
       <div class="help-section__slider">
         <div class="help-section__slider-inner swiper JS-children-help-slider">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper" data-animation-grid>
             {% for child in commonData.children %} {% if loop.index0 < 3 %}
             <div class="swiper-slide">
               {% include "components/child-card.html" %}

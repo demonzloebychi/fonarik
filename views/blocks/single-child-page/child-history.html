@@ -2,21 +2,21 @@
 
 <section class="child-history">
   <img class="child-history__bg" src="/img/children/gradients-child-page.png" alt="" aria-hidden="true" />
-  <img class="child-history__sun" src="/img/children/sun.svg" alt="" aria-hidden="true" />
+  <img class="child-history__sun" src="/img/children/sun.svg" alt="" aria-hidden="true" data-animation="fade-scale" />
 
   <div class="child-history__container">
-    <h2 class="child-history__title">История ребенка</h2>
+    <h2 class="child-history__title" data-animation="text-mask">История ребенка</h2>
 
     <div class="child-history__content">
       <div class="child-history__col">
         {% for paragraph in child.descriptionOne %}
-          <p class="child-history__text">{{ paragraph }}</p>
+          <p class="child-history__text" data-animation="text-mask">{{ paragraph }}</p>
         {% endfor %}
       </div>
 
       <div class="child-history__col">
         {% for paragraph in child.descriptionTwo %}
-          <p class="child-history__text">{{ paragraph }}</p>
+          <p class="child-history__text" data-animation="text-mask">{{ paragraph }}</p>
         {% endfor %}
       </div>
     </div>

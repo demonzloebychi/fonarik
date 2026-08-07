@@ -1,4 +1,4 @@
-<section class="general-banner-container">
+<section class="general-banner-container" data-animation="general-banner">
   <div class="container-lg">
     <div class="general-banner">
       <div class="general-banner__media">
@@ -6,17 +6,18 @@
           src="/img/help/general-banner-bg.webp"
           aria-hidden="true"
           class="general-banner__bg"
+          data-banner-bg
         />
         <div class="general-banner__overlay"></div>
 
-        <div class="general-banner__content">
-          <div class="general-banner__name">
+        <div class="general-banner__content" >
+          <div class="general-banner__name" data-animation="fade-up">
             <img src="/img/main/main-page-title.svg" alt="Название компании" />
           </div>
-          <h1 class="general-banner__title">
+          <h1 class="general-banner__title" data-animation="fade-up">
             БЛАГОТВОРИТЕЛЬНЫЙ ФОНД ПОМОЩИ ДЕТЯМ
           </h1>
-          <p class="general-banner__description">
+          <p class="general-banner__description" data-animation="text-mask">
             Даже небольшое пожертвование становится частью большой работы и
             помогает тем, кто оказался в сложной ситуации. Ниже вы можете
             выбрать сбор, который хотите поддержать. За каждым из них стоит
@@ -26,7 +27,7 @@
         </div>
       </div>
 
-      <div class="general-banner__form-wrapper">
+      <div class="general-banner__form-wrapper" data-banner-form>
         {% include "components/form.html" %}
       </div>
     </div>

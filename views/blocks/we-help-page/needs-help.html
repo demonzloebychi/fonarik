@@ -1,11 +1,11 @@
-<section class="needs-help">
+<section class="needs-help" data-animation="fade-up-cards">
   <div class="needs-help__background">
     <img src="/img/needs-help/gradients-needs-help.png" aria-hidden="true">
   </div>
-  <div class="needs-help__container">
-    <h2 class="needs-help__title h2__title">Мы помогаем</h2>
+  <div class="needs-help__container container">
+    <h2 class="needs-help__title h2__title" data-animation="fade-up">Мы помогаем</h2>
 
-    <div class="needs-help__grid" id="we-help-container">
+    <div class="needs-help__grid" id="we-help-container" data-animation-grid>
       {% for child in commonData.children %} 
         {% if loop.index0 < 3 %} 
           {% include "components/child-card.html" %} 

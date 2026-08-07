@@ -1,4 +1,4 @@
-<section class="help-banner">
+<section class="help-banner" data-animation="help-banner">
   <div class="help-banner__container">
     
     <div class="help-banner__decorations" aria-hidden="true">
@@ -6,14 +6,14 @@
     </div>
 
     <div class="help-banner__content">
-      <h2 class="help-banner__title">Получить помощь</h2>
-      <p class="help-banner__description">
+      <h2 class="help-banner__title" data-animation="text-mask">Получить помощь</h2>
+      <p class="help-banner__description" data-animation="fade-up">
         Если вам необходима помощь, заполните и отправьте анкету-обращение в фонд
       </p>
-      <a href="#" class="help-banner__button">ЗАПОЛНИТЬ АНКЕТУ</a>
+      <button data-open-popup="donation-popup" class="help-banner__button" data-animation="fade-up">ЗАПОЛНИТЬ АНКЕТУ</button>
     </div>
 
-    <div class="help-banner__gallery">
+    <div class="help-banner__gallery" data-banner-gallery>
       <img src="/img/needs-help/sun.png" alt="" class="help-banner__sun">
       
       <div class="help-banner__card help-banner__card--left">

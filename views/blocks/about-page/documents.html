@@ -1,7 +1,7 @@
 {% macro documentsBlock(title="Документы", items=[], initialCount=4, step=4, showMore=true, type="docs") %}
-<section class="docs {{ 'reports' if type == 'reports' }}">
-  <div class="docs__container">
-    <h2 class="docs__title">{{ title }}</h2>
+<section class="docs {{ 'reports' if type == 'reports' }}" data-animation="docs-section">
+  <div class="docs__container container">
+    <h2 class="docs__title" data-animation="text-mask">{{ title }}</h2>
     
     <div class="docs__grid" id="{{ type }}-container">
       {# Рендерим только стартовое количество элементов (initialCount) #}

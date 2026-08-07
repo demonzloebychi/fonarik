@@ -1,20 +1,20 @@
 <section class="quote-section">
   <div class="quote-section__container">
     <div class="quote-section__content">
-      <blockquote class="quote-section__quote">
+      <blockquote class="quote-section__quote" data-animation="text-mask">
         {{quote.title}}
       </blockquote>
       
       <div class="quote-section__author-info">
-        <h3 class="quote-section__author-name">{{quote.name}}</h3>
-        <p class="quote-section__text">
+        <h3 class="quote-section__author-name" data-animation="fade-up">{{quote.name}}</h3>
+        <p class="quote-section__text" data-animation="fade-up">
           {{quote.text}}
         </p>
       </div>
     </div>
 
     <div class="quote-section__person">
-      <img src="/img/main/ida-galich.png" alt="{{quote.title}}" class="quote-section__person-img">
+      <img src="/img/main/ida-galich.png" alt="{{quote.title}}" class="quote-section__person-img" data-animation="fade-scale">
     </div>
   </div>
 </section>

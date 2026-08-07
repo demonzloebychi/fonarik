@@ -5,20 +5,20 @@
       <aside class="news-detail__sidebar">
         <div class="article-meta">
           <div class="article-meta__item">
-            <span class="article-meta__label">Дата публикации</span>
-            <time class="article-meta__value" datetime="{{ item.datetime }}">{{ item.date }}</time>
+            <span class="article-meta__label" data-animation="fade-up">Дата публикации</span>
+            <time class="article-meta__value" datetime="{{ item.datetime }}" data-animation="fade-up">{{ item.date }}</time>
           </div>
           {% if item.topic %}
           <div class="article-meta__item">
-            <span class="article-meta__label">Тема статьи</span>
-            <span class="article-meta__value">{{ item.topic }}</span>
+            <span class="article-meta__label" data-animation="fade-up">Тема статьи</span>
+            <span class="article-meta__value" data-animation="fade-up">{{ item.topic }}</span>
           </div>
           {% endif %}
         </div>
       </aside>
 
       <article class="news-detail__content article-content">
-        <div class="article-content__body">
+        <div class="article-content__body" data-animation="fade-up">
           {{ item.htmlContent | safe }}
         </div>
       </article>
