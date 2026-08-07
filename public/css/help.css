@@ -93,7 +93,25 @@
 .help-section__slider .swiper-wrapper {
   align-items: stretch;
 }
-
+.child-card-button {
+  border-radius: 15px;
+  background: var(--red);
+  height: 46px !important;
+  width: 46px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+  padding: 0;
+  flex-shrink: 0;
+  svg {
+    width: fit-content !important;
+    height: fit-content !important;
+  }
+}
 .child-card-button-prev,
 .child-card-button-next {
   position: absolute;
@@ -191,8 +209,12 @@
 }
 
 /* Ховер на неактивную кнопку */
-.donation-form__type-label:hover .donation-form__type-input:not(:checked) + .donation-form__type-btn,
-.donation-form__amount-label:hover .donation-form__amount-input:not(:checked) + .donation-form__amount-btn {
+.donation-form__type-label:hover
+  .donation-form__type-input:not(:checked)
+  + .donation-form__type-btn,
+.donation-form__amount-label:hover
+  .donation-form__amount-input:not(:checked)
+  + .donation-form__amount-btn {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
@@ -227,7 +249,9 @@
   color: var(--white);
   font-family: inherit;
   font-size: 16px;
-  transition: border-color 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .donation-form__input::placeholder {
@@ -291,7 +315,9 @@
   border-radius: 6px;
   background-color: transparent;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 14px 14px;
@@ -343,7 +369,9 @@
   font-size: 20px;
   text-align: center;
   color: var(--red);
-  transition: opacity 0.2s ease, transform 0.1s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.1s ease;
 }
 
 .donation-form__submit-btn:hover {
