@@ -98,10 +98,10 @@
   background: var(--red);
   height: 46px !important;
   width: 46px !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  cursor: pointer !important;
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
