@@ -112,6 +112,10 @@
     height: fit-content !important;
   }
 }
+.child-card-button.swiper-button-lock {
+  display: none !important;
+}
+
 .child-card-button-prev,
 .child-card-button-next {
   position: absolute;
