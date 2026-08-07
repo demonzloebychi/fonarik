@@ -78,6 +78,10 @@ body.popup-open {
   transition: opacity 0.2s ease;
   padding: 5px 10px;
 }
+.donation-step__close-image {
+  width: 30px;
+  height: 30px;
+}
 
 .donation-step__close:hover {
   opacity: 1;
@@ -86,7 +90,7 @@ body.popup-open {
 /* Главный контейнер */
 .donation-step__container {
   display: flex;
-  gap: 70px;
+  gap: clamp(20px, 4.9vw, 70px);
   align-items: flex-start;
 }
 
@@ -102,7 +106,7 @@ body.popup-open {
 .donation-step__nav {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: clamp(15px, 1.7vw, 20px);
 }
 
 .donation-step__nav-item {
@@ -121,10 +125,10 @@ body.popup-open {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
+  width: clamp(32px, 3vw, 46px);
+  height: clamp(32px, 3vw, 46px);
   border-radius: 100px;
-  font-size: 14px;
+  font-size: clamp(13px, 1.3vw, 14px);
   font-weight: 400;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -146,7 +150,7 @@ body.popup-open {
 }
 
 .donation-step__nav-title {
-  font-size: 18px;
+  font-size: clamp(16px, 1.7vw, 18px);
   font-weight: 700;
   line-height: 1.5;
   opacity: 0.8;
@@ -173,7 +177,7 @@ body.popup-open {
 .donation-step__pane {
   display: none;
   flex-direction: column;
-  gap: 40px;
+  gap: clamp(30px, 3.5vw, 40px);
 }
 
 .donation-step__pane_active {
@@ -187,7 +191,7 @@ body.popup-open {
 }
 
 .donation-step__number {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(26px, 4vw, 48px);
   font-weight: 600;
   line-height: 1.1;
   color: var(--red);
@@ -195,7 +199,7 @@ body.popup-open {
 
 .donation-step__title {
   margin: 0;
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(26px, 4vw, 48px);
   font-weight: 600;
   line-height: 1.1;
   color: var(--black);
@@ -204,7 +208,7 @@ body.popup-open {
 .donation-step__content {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: clamp(30px, 3.5vw, 40px);
 }
 
 /* ==========================================================================
@@ -552,7 +556,6 @@ body.popup-open {
 @media (max-width: 992px) {
   .donation-step__container {
     flex-direction: column;
-    gap: 30px;
   }
 
   .donation-step__sidebar {
