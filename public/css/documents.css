@@ -50,7 +50,9 @@
   padding: 15px 20px;
   text-decoration: none;
   box-shadow: 4px 4px 25px rgba(138, 138, 138, 0.2);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   box-sizing: border-box;
   min-height: 85px;
 }
@@ -121,8 +123,16 @@
   font-weight: 700;
   font-size: 20px;
   gap: 8px;
+  svg {
+    transition: transform 0.1s ease-in;
+  }
 }
 
+@media (hover: hover) {
+  .docs__load-more:hover svg {
+    transform: rotate(45deg);
+  }
+}
 @media (max-width: 768px) {
   .docs__grid {
     grid-template-columns: 1fr;

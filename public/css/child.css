@@ -40,9 +40,9 @@
   position: relative;
   z-index: 2;
   max-width: 300px;
-    object-fit: cover;
-    max-height: 300px;
-    aspect-ratio: 1;
+  object-fit: cover;
+  max-height: 300px;
+  aspect-ratio: 1;
 }
 
 /* Контентная часть карточки */
@@ -153,6 +153,14 @@
   font-weight: 700;
   font-size: clamp(16px, 1.8vw, 20px);
   color: #fff;
+  svg {
+    transition: transform .1s ease-in;
+  }
+}
+@media (hover: hover) {
+  .child-card__btn:hover svg {
+    transform: rotate(45deg);
+  }
 }
 
 .child-card__link {
@@ -167,5 +175,4 @@
   .child-card__photo-wrapper {
     height: 255px;
   }
-
 }

@@ -62,12 +62,16 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-family: 'TikTok Sans', sans-serif;
+  font-family: "TikTok Sans", sans-serif;
   font-size: clamp(1rem, 0.938rem + 0.156vw, 1.25rem);
   font-weight: 700;
-  transition: opacity 0.2s ease;
+  svg {
+    transition: transform 0.1s ease-in;
+  }
 }
 
-.needs-help__more-btn:hover {
-  opacity: 0.9;
+@media (hover: hover) {
+  .needs-help__more-btn:hover svg {
+    transform: rotate(45deg);
+  }
 }
