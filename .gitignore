@@ -26,6 +26,7 @@ Thumbs.db
 # Папки с временными файлами
 tmp/
 temp/
+public.zip
 
 # Кэш
 .cache/
@@ -34,6 +35,7 @@ temp/
 dist/
 build/
 public/html/
+public/static/
 
 # Файлы среды (если есть)
 .env
