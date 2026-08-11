@@ -1,43 +1,128 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Базовый заголовок{% endblock %}</title>
-    <!-- <link rel="stylesheet" href="/css/style.css"> -->
     {% for file in cssFiles %}
-        <link rel="stylesheet" href="/css/{{ file.name }}?v={{ file.version }}">
+    <link rel="stylesheet" href="/css/{{ file.name }}?v={{ file.version }}" />
     {% endfor %}
 
-    <link rel="stylesheet" href="/libs/swiper/swiper.min.css">
+    <link rel="stylesheet" href="/libs/swiper/swiper.min.css" />
     <script src="/libs/swiper/swiper.min.js"></script>
 
     {% block stylesheets %}{% endblock %}
-</head>
-<body>
+  </head>
+  <body>
     <div class="wrapper">
-        
-        {% include "blocks/header.html" %} 
+      <!-- <div id="loader-wrapper">
+        <video
+          autoplay="autoplay"
+          muted="muted"
+          loop="loop"
+          playsinline="playsinline"
+          id="loader-video"
+        >
+          <source src="/videos/preloader.webm" type="video/webm" />
+        </video>
+      </div> -->
 
-        <main class="main">
-            {% block content %}{% endblock %}
-        </main>
+      {% include "blocks/header.html" %}
 
-        {% include "blocks/footer.html" %} 
+      <main class="main">{% block content %}{% endblock %}</main>
 
-        {% include "blocks/cookie.html" %} 
-        {% include "components/donation-popup.html" %} 
-        {% include "components/success-popup.html" %} 
-        {% include "components/failed-popup.html" %} 
-
-
+      {% include "blocks/footer.html" %} {% include "blocks/cookie.html" %} {%
+      include "components/donation-popup.html" %} {% include
+      "components/success-popup.html" %} {% include
+      "components/failed-popup.html" %}
     </div>
+
+    <div class="cursor-sun">
+      <svg
+        width="150"
+        height="150"
+        viewBox="0 0 150 150"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <!-- Эффект шума -->
+          <filter id="sun-noise">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency="0.8"
+              numOctaves="3"
+              result="noise"
+            />
+            <feColorMatrix
+              type="matrix"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.15 0"
+            />
+            <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
+            <feBlend mode="multiply" in="SourceGraphic" in2="monoNoise" />
+          </filter>
+
+          <!-- Размытие краев -->
+          <filter id="sun-blur" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="12" />
+          </filter>
+
+          <!-- Градиент -->
+          <radialGradient id="sun-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFE853" />
+            <stop offset="65%" stop-color="#FFD700" />
+            <stop offset="100%" stop-color="#FFD700" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+
+        <!-- Свечение -->
+        <circle
+          cx="75"
+          cy="75"
+          r="60"
+          fill="url(#sun-glow)"
+          filter="url(#sun-blur)"
+          opacity="0.6"
+        />
+
+        <!-- Тело солнца с шумом -->
+        <g filter="url(#sun-blur)">
+          <circle
+            cx="75"
+            cy="75"
+            r="45"
+            fill="#FFE853"
+            filter="url(#sun-noise)"
+          />
+        </g>
+
+        <!-- УМЕНЬШЕННОЕ ЛИЦО (масштабировано и выровнено по центру) -->
+        <g class="sun-face">
+          <!-- Левый глаз -->
+          <path
+            d="M68.5 71C68.5 72.1 67.6 73 66.5 73C65.4 73 64.5 72.1 64.5 71C64.5 69.9 65.4 69 66.5 69C67.6 69 68.5 69.9 68.5 71Z"
+            fill="#333333"
+          />
+          <!-- Правый глаз -->
+          <path
+            d="M85.5 71C85.5 72.1 84.6 73 83.5 73C82.4 73 81.5 72.1 81.5 71C81.5 69.9 82.4 69 83.5 69C84.6 69 85.5 69.9 85.5 71Z"
+            fill="#333333"
+          />
+          <!-- Улыбка -->
+          <path
+            d="M75 80C72.7 80 70.4 79.1 68.7 77.4L69.5 76.6C71 78.1 73 78.9 75 78.9C77 78.9 79 78.1 80.5 76.6L81.3 77.4C79.6 79.1 77.3 80 75 80Z"
+            fill="#333333"
+          />
+        </g>
+      </svg>
+    </div>
+
+    <!-- <script src="/js/preloader.js"></script> -->
 
     <script src="/libs/gsap/gsap.min.js"></script>
     <script src="/libs/gsap/ScrollTrigger.min.js"></script>
     <script src="/libs/gsap/SplitText.min.js"></script>
     <script src="/libs/gsap/ScrambleTextPlugin.min.js"></script>
-
 
     <script src="/js/header.js"></script>
     <script src="/js/swipers.js"></script>
@@ -47,9 +132,10 @@
     <script src="/js/form.js"></script>
     <script src="/js/statesPopup.js"></script>
 
-
     <!-- <script src="/js/animations/stackingPanels.js"></script> -->
     <script src="/js/animations/donationButton.js"></script>
+    <script src="/js/animations/cursor.js"></script>
+
     <!-- <script src="/js/animations/quote.js"></script> -->
     <!-- <script src="/js/animations/statsBanner.js"></script> -->
     <script src="/js/animations/partners.js"></script>
@@ -64,7 +150,5 @@
     <script src="/js/animations/helpBanner.js"></script>
     <script src="/js/animations/generalBanner.js"></script>
     <script src="/js/animations/mainBanner.js"></script>
-
-
-</body>
+  </body>
 </html>

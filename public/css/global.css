@@ -147,14 +147,66 @@ button,
   }
 }
 
-
 .h2__title {
   width: 100%;
-  font-family: 'TikTok Sans', sans-serif;
+  font-family: "TikTok Sans", sans-serif;
   font-size: clamp(2.25rem, 1.875rem + 0.938vw, 3rem);
   font-weight: 700;
   line-height: 1.1;
   color: var(--black);
   text-align: left;
   text-transform: uppercase;
+}
+
+/* Контейнер на весь экран */
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #000000; /* Замените на фоновый цвет вашего сайта */
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    opacity 0.5s ease,
+    visibility 0.5s ease;
+}
+
+/* Адаптивное видео */
+#loader-video {
+  width: 100%;
+  height: 100%;
+
+  /* ВАЖНО: Выберите один из двух вариантов ниже */
+  object-fit: cover; /* ВАРИАНТ 1: Обрезать края, залить весь экран */
+  /* object-fit: contain;  ВАРИАНТ 2: Вписать полностью с полями сверху/снизу */
+}
+
+/* Класс для скрытия прелоадера */
+.loader-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (hover: hover) {
+  .cursor-sun {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 110px; /* Физический размер пушистого солнца на экране */
+    height: auto;
+    pointer-events: none;
+    z-index: 10000;
+
+    /* Сдвиг по Y на 50px опустит его ниже курсора */
+    transform: translate(-50%, 50px);
+    will-change: transform;
+    /* Скрываем на мобилках, чтобы не мешало пальцу */
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 }
