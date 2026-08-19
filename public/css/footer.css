@@ -121,6 +121,27 @@
   display: block;
   margin-top: 60px;
 }
+
+.nav-menu__item {
+  transition: transform .1s ease-in;
+
+  .nav-menu__link {
+    transition: color .1s ease-in;
+  }
+}
+
+
+
+@media (hover: hover) {
+  .nav-menu__item:hover {
+    transform: scale(1.05);
+    .nav-menu__link {
+      color: var(--red);
+    }
+  }
+
+}
+
 @media (max-width: 768px) {
   .only-mobile-footer {
     display: block;
