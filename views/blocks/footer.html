@@ -90,7 +90,8 @@
                   href="{{ item.url }}"
                   aria-label="{{ item.title }}"
                 >
-                  <img src="{{ item.image }}" alt="" />
+                  {{ item.svg | safe }}
+                  <!-- <img src="{{ item.image }}" alt="" /> -->
                 </a>
               </li>
               {% endfor %}

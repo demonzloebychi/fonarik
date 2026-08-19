@@ -66,11 +66,9 @@
 .nav-menu__list--advanced {
   max-width: 300px;
   .nav-menu__link {
-    line-height: 120% !important; 
+    line-height: 120% !important;
     font-size: 11px !important;
-
   }
-  
 }
 .footer__menu {
   max-width: 692px;
@@ -83,13 +81,28 @@
   .socials-menu__link {
     width: clamp(42px, 5vw, 60px);
     height: clamp(42px, 5vw, 60px);
-    img {
+    svg {
+      color: var(--black);
       @media (max-width: 768px) {
         scale: 0.7;
       }
     }
   }
 }
+.socials-menu__link {
+  transition: color 0.3s ease-in, transform 0.1s ease-in;
+}
+
+@media (hover: hover) {
+  .socials-menu__link:hover {
+    border-color: var(--red);
+    transform: scale(1.05);
+    svg {
+      color: var(--red); 
+    }
+  }
+}
+
 
 .footer-policy {
   margin-top: auto;
@@ -98,16 +111,18 @@
   gap: clamp(40px, 7vw, 90px);
 }
 
-.nav-menu__title, .contacts-menu__title, .socials-menu__title {
+.nav-menu__title,
+.contacts-menu__title,
+.socials-menu__title {
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 16px;
   line-height: 188%;
   color: var(--black);
   text-transform: uppercase;
-
 }
-.nav-menu__link, .contacts-menu__link {
+.nav-menu__link,
+.contacts-menu__link {
   font-family: var(--second-family);
   font-weight: 400;
   font-size: 16px;
@@ -122,24 +137,25 @@
   margin-top: 60px;
 }
 
-.nav-menu__item {
-  transition: transform .1s ease-in;
+.nav-menu__item,
+.contacts-menu__item {
+  transition: transform 0.1s ease-in;
 
-  .nav-menu__link {
-    transition: color .1s ease-in;
+  .nav-menu__link,
+  .contacts-menu__link {
+    transition: color 0.1s ease-in;
   }
 }
 
-
-
 @media (hover: hover) {
-  .nav-menu__item:hover {
+  .nav-menu__item:hover,
+  .contacts-menu__item:hover {
     transform: scale(1.05);
-    .nav-menu__link {
+    .nav-menu__link,
+    .contacts-menu__link {
       color: var(--red);
     }
   }
-
 }
 
 @media (max-width: 768px) {
@@ -162,11 +178,11 @@
   .footer__menu-bottom {
     gap: 10px;
   }
-.footer__menu-bottom {
-  margin-top: 0;
+  .footer__menu-bottom {
+    margin-top: 0;
 
-  gap: 50px;
-}
+    gap: 50px;
+  }
   .footer__menu {
     max-width: none;
     width: 100%;
