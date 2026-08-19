@@ -154,14 +154,17 @@
   font-size: clamp(16px, 1.8vw, 20px);
   color: #fff;
   svg {
-    transition: transform .1s ease-in;
+    transition: transform 0.1s ease-in;
   }
 }
-@media (hover: hover) {
-  .child-card__btn:hover svg {
-    transform: rotate(45deg);
-  }
-}
+
+/* .child-card__link {
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: clamp(16px, 1.8vw, 20px);
+  color: var(--red);
+} */
 
 .child-card__link {
   text-decoration: none;
@@ -169,8 +172,33 @@
   font-weight: 700;
   font-size: clamp(16px, 1.8vw, 20px);
   color: var(--red);
+
+  position: relative;
+  display: inline-block;
 }
 
+.child-card__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--red);
+
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease-in-out;
+}
+
+@media (hover: hover) {
+  .child-card__btn:hover svg {
+    transform: rotate(45deg);
+  }
+  .child-card__link:hover::after {
+    transform: scaleX(1);
+  }
+}
 @media (max-width: 991px) {
   .child-card__photo-wrapper {
     height: 255px;
