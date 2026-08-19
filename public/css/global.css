@@ -96,6 +96,7 @@ button,
   gap: 4px;
   border-radius: 100px;
   font-family: var(--second-family);
+  transition: opacity .1s ease-in;
 }
 .button-red {
   background-color: var(--red);
@@ -103,6 +104,12 @@ button,
   font-size: 12px;
   padding-inline: 18px;
   padding-block: 10px;
+}
+@media (hover: hover) {
+  button:hover,
+  .button:hover {
+      opacity: 0.9;
+  }
 }
 .button-red-big {
   background-color: var(--red);

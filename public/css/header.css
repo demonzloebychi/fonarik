@@ -34,9 +34,22 @@
   display: flex;
   gap: clamp(20px, 3vw, 50px);
 }
-
+.header-menu__item {
+  transition: transform .1s ease-in;
+}
 .header-menu__link {
   color: var(--black);
+  transition: color .1s ease-in;
+}
+
+@media (hover: hover) {
+  .header-menu__link:hover {
+    color: var(--red);
+  }
+
+  .header-menu__item:hover {
+    transform: scale(1.05);
+  }
 }
 
 .header__actions {
