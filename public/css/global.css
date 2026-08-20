@@ -193,39 +193,6 @@ button,
   text-transform: uppercase;
 }
 
-/* Контейнер на весь экран */
-#loader-wrapper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #000000; /* Замените на фоновый цвет вашего сайта */
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    opacity 0.5s ease,
-    visibility 0.5s ease;
-}
-
-/* Адаптивное видео */
-#loader-video {
-  width: 100%;
-  height: 100%;
-
-  /* ВАЖНО: Выберите один из двух вариантов ниже */
-  object-fit: cover; /* ВАРИАНТ 1: Обрезать края, залить весь экран */
-  /* object-fit: contain;  ВАРИАНТ 2: Вписать полностью с полями сверху/снизу */
-}
-
-/* Класс для скрытия прелоадера */
-.loader-hidden {
-  opacity: 0;
-  visibility: hidden;
-}
-
 @media (hover: hover) {
   .cursor-sun {
     position: fixed;
@@ -243,5 +210,123 @@ button,
     @media (max-width: 768px) {
       display: none;
     }
+  }
+}
+
+
+.preloader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #c3b1e1 0%, #c3b1e1 55%, #dcd3b8 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  max-width: 100vw;
+}
+
+.preloader-overlay.is-hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-arc {
+  position: relative;
+  width: 380px;  
+  height: 380px;
+}
+
+.sun-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  transform-origin: center center;
+  animation: smoothCircleRotate 3.2s linear infinite;
+}
+
+.sun-1 { 
+  animation-delay: -0.0s; 
+  opacity: 0.6; 
+}
+.sun-2 { 
+  animation-delay: -0.35s; 
+  opacity: 1.0; 
+}
+.sun-3 { 
+  animation-delay: -0.7s; 
+  opacity: 1.0; 
+}
+.sun-4 { 
+  animation-delay: -1.05s; 
+  opacity: 1.0; 
+}
+.sun-5 { 
+  animation-delay: -1.4s; 
+  opacity: 0.4; 
+}
+
+.sun-aura {
+  position: absolute;
+  top: 0;
+  width: 80px;   
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff59d 10%, #ffeb3b 55%, #fbc02d 85%, transparent 100%);
+  filter: blur(10px); 
+  box-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
+  z-index: 1;
+}
+
+.sun-face {
+  position: absolute;
+  top: 30px; 
+  z-index: 2;
+  width: 16px; 
+  height: auto;
+  animation: keepFaceVertical 3.2s linear infinite;
+}
+
+.sun-1 .sun-face { animation-delay: -0.0s; }
+.sun-2 .sun-face { animation-delay: -0.35s; }
+.sun-3 .sun-face { animation-delay: -0.7s; }
+.sun-4 .sun-face { animation-delay: -1.05s; }
+.sun-5 .sun-face { animation-delay: -1.4s; }
+
+.sun-face svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes smoothCircleRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes keepFaceVertical {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@media (max-width: 480px) {
+  .preloader-arc {
+    transform: scale(0.62);
   }
 }

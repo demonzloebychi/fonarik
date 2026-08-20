@@ -1,9 +1,9 @@
 window.addEventListener('load', function() {
-  const loader = document.getElementById('loader-wrapper');
-  
-  if (loader) {
-    setTimeout(function() {
-      loader.classList.add('loader-hidden'); 
-    }, 500); 
+  const preloader = document.getElementById('site-preloader');
+  if (preloader) {
+    setTimeout(function(){
+      preloader.classList.add('is-hidden');
+
+    }, 500)
   }
 });
